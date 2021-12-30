@@ -2,10 +2,10 @@
 
 [![GitHub Repository](https://raw.githubusercontent.com/tobiasbriones/general-images/main/example-projects/badges/ep-gh-repo-badge.svg)](https://github.com/tobiasbriones/mathsoftware.engineer)
 
-[![Project GitHub License](https://img.shields.io/github/license/tobiasbriones/my-page.svg?style=flat-square)](https://github.com/tobiasbriones/mathsoftware.engineer/blob/main/LICENSE)
+[![Project GitHub License](https://img.shields.io/github/license/tobiasbriones/mathsoftware.engineer.svg?style=flat-square)](https://github.com/tobiasbriones/mathsoftware.engineer/blob/main/LICENSE)
 
 
-My professional domain SPA index.
+My professional's domain SPA index.
 
 ## Contact
 
@@ -18,7 +18,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 **Math Software Engineer**
 
-My professional domain SPA index.
+My professional's domain SPA index.
 
 Copyright © 2021 Tobias Briones. All rights reserved.
 
