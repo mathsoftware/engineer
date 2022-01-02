@@ -1,6 +1,6 @@
 # Math Software Engineer
 
-[![GitHub Repository](https://raw.githubusercontent.com/tobiasbriones/general-images/main/example-projects/badges/ep-gh-repo-badge.svg)](https://github.com/tobiasbriones/mathsoftware.engineer)
+[![GitHub Repository](https://raw.githubusercontent.com/tobiasbriones/static/main/gh-badge.svg)](https://github.com/tobiasbriones/mathsoftware.engineer)
 
 Math Software Engineer's domain.
 
