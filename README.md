@@ -24,4 +24,4 @@ Copyright © 2021 Tobias Briones. All rights reserved.
 
 ### License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE-MIT).
