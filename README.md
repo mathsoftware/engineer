@@ -2,7 +2,7 @@
 
 [![GitHub Repository](https://raw.githubusercontent.com/tobiasbriones/general-images/main/example-projects/badges/ep-gh-repo-badge.svg)](https://github.com/tobiasbriones/mathsoftware.engineer)
 
-My professional's domain SPA index.
+Math Software Engineer's domain.
 
 ## Contact
 
@@ -15,7 +15,7 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 **Math Software Engineer**
 
-My professional's domain SPA index.
+Math Software Engineer's domain.
 
 Copyright © 2021 Tobias Briones. All rights reserved.
 
