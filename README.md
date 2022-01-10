@@ -4,6 +4,14 @@
 
 Math Software Engineer's domain.
 
+## Index
+
+Go to:
+
+- [Blog](https://blog.mathsoftware.engineer): Math Software Engineer's blog.
+- [Dev](https://dev.mathsoftware.engineer): Software Development projects.
+- [Me](https://me.mathsoftware.engineer): Personal resume landing page.
+
 ## Contact
 
 This project: [Website](https://mathsoftware.engineer),
@@ -22,5 +30,5 @@ Copyright © 2021 Tobias Briones. All rights reserved.
 ### License
 
 Content licensed under the [CC-BY-4.0 License](./LICENSE-CC). Code licensed
-under the [MIT License](./LICENSE-MIT). See [LICENSE](./LICENSE.md) for more 
+under the [MIT License](./LICENSE-MIT). See [LICENSE](./LICENSE.md) for more
 details.
