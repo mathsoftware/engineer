@@ -7,7 +7,8 @@ Math Software Engineer's static files.
 This branch contains some of the most valuable arts I have created in these 
 years. I am finally making my works public, so here we are.
 
-I am not going to make Piaxid logos public available yet this year.
+I am not going to make Piaxid logos or PSD source files public available yet 
+this year.
 
 ## Further Details
 
