@@ -25,10 +25,9 @@ Tobias Briones: [GitHub](https://github.com/tobiasbriones)
 
 Math Software Engineer's domain.
 
-Copyright © 2021 Tobias Briones. All rights reserved.
+Copyright © 2021-present Tobias Briones. All rights reserved.
 
 ### License
 
-Content licensed under the [CC-BY-4.0 License](./LICENSE-CC). Code licensed
-under the [MIT License](./LICENSE-MIT). See [LICENSE](./LICENSE.md) for more
-details.
+Content licensed under the [CC-BY-4.0 License](LICENSE-CC). Code licensed
+under the [MIT License](LICENSE-MIT).
