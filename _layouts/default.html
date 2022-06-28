@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  {% seo %}
+  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  {% include head-custom.html %}
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+      {% if site.logo %}
+      <img src="{{site.logo | relative_url}}" alt="Logo" />
+      {% endif %}
+
+      <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+      {% if site.github.is_user_page %}
+      <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+      {% endif %}
+    </header>
+    <section>
+      <article>
+      {{ content }}
+      </article>
+    </section>
+    <footer>
+      {% if site.github.is_project_page %}
+      <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      {% endif %}
+
+      <div>
+        Follow me for more original content:
+        <a class="github-button" href="https://github.com/tobiasbriones" aria-label="Follow @tobiasbriones on GitHub">Follow @tobiasbriones</a>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <a href="https://twitter.com/tobiasbriones_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @tobiasbriones_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
+      <div style="font-size: 10px;">
+        <p><strong>Math Software Engineer. </strong>© 2021-2022 Tobias Briones.</p>
+        <p>Content licensed under the <a
+          href="https://github.com/tobiasbriones/mathsoftware.engineer/blob/main/LICENSE-CC">CC-BY-4.0 License</a>. Code licensed
+           under the <a
+            href="https://github.com/tobiasbriones/mathsoftware.engineer/blob/main/LICENSE-MIT">MIT License</a>. See <a href="https://github.com/tobiasbriones/blog/blob/main/README.md">README</a> for more
+           details.</p>
+        <hr>
+        <!--<p style="font-size: 10px;">Third-party content is available under-->
+        <!--                            their respective source,-->
+        <!--   copyright, and/or license. See <a href="https://github.com/tobiasbriones/mathsoftware.engineer/blob/main/NOTICE.md">NOTICE</a> for more details.</p>-->
+      </div>
+      <p style="font-size: 10px;">Hosted on GitHub Pages &mdash; Theme by
+        <a
+        href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+  </div>
+  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+</body>
+</html>
