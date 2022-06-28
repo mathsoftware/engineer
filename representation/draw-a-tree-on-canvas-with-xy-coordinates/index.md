@@ -671,6 +671,32 @@ Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
 to learn more about it.
 
+#### Caveats on Recursion
+
+Many design and performance issues should be deeply addressed but that's another
+topic. The problem is that these languages TS/JS and platforms like web browser
+runtimes are not good for these problems. 
+
+A better suggestion would be employing languages or technologies like Haskell
+for academic purposes and Rust/JavaFX/WebAssembly for engineering. After that,
+we should consider DSLs instead.
+
+Recall that, just functional languages implement TCE and TCO at first-class so
+the engineer or mathematician must be careful when using recursion. For most
+languages, imperative loops are to be used instead. 
+
+For mathematical models is key to design declarative systems but general-purpose
+computers don't support many abstractions and unfortunately, recursion is not so
+widely used due to the hardware being imperative as an obstacle.
+
+In other words, be careful when using recursion. Recursion is key for
+defining mathematical models but computers don't understand math really well
+and imperative loops are preferred for most implementations unless you know
+what you're doing.
+
+That is not a problem of recursion as is, but a problem of computers, so use 
+recursion as a mathematician but think about it when being an engineer. 
+
 ## Conclusion
 
 A typescript module was designed and developed to render a xy-axis and then the
