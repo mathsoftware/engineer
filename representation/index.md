@@ -7,7 +7,7 @@
 Mathematical models are abstract, but they can be represented via graphics
 by applying math software engineering.
 
-Representation is the art of consuming mathematical models via an interface
+Representation is the art of consuming mathematical models via an interface,
 such that is useful for the consumer.
 
 For example:
