@@ -1,0 +1,12 @@
+{
+  "name": "web",
+  "description": "Draw a Tree on Canvas with XY Coordinates (Web)",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Tobias Briones",
+  "main": "main.ts",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
