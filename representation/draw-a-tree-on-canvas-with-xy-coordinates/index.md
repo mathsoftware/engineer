@@ -16,9 +16,9 @@ The **Machine Replacement Model** is a deterministic dynamic programming model
 from Operations Research. It states that you have a machine with an initial age.
 You have a number of decision years to know what to do with that machine. Then,
 for each decision year, there are two options: keep the machine and pay
-maintenance (K), or replace the machine with a new one (R). All the possible
-outcomes starting from the first decision year can be visually represented as a
-tree that grows horizontally.
+maintenance (**K**), or replace the machine with a new one (**R**). All the 
+possible outcomes starting from the first decision year can be visually
+represented as a tree that grows horizontally.
 
 The first solutions-tree given below, was made with HTML, CSS, and the DOM
 API (`div` elements). That version can be found at
@@ -28,7 +28,7 @@ textbook references. You can also review
 the [Repsymo Solver](https://repsymo.com) for a complete insight on this
 model (and more).
 
-![Solutions Tree with HTML and CSS](ep-mrm-tree-screenshot.png)
+![Solutions Tree with HTML and CSS | EP: MRM](solutions-tree-with-html-and-css---ep-mrm.png)
 
 The chances are obviously limited and the lines from node to node are missing
 (hence the pairs (K, R) as labels). The other problem is that the data structure
