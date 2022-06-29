@@ -6,6 +6,15 @@
   "author": "Tobias Briones",
   "main": "main.ts",
   "private": true,
+  "keywords": [
+    "tree",
+    "model-visualization",
+    "or",
+    "recursion",
+    "math",
+    "canvas",
+    "html"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
