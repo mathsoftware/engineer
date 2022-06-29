@@ -62,8 +62,7 @@ draw.
 
 ```html
 <div id="solutionsTreeParent">
-  <canvas id="solutionsTree">
-  </canvas>
+  <canvas id="solutionsTree"></canvas>
 </div>
 ```
 
