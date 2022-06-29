@@ -2,8 +2,20 @@
 /* SPDX-License-Identifier: MIT */
 /* This file is part of https://github.com/tobiasbriones/mathsoftware.engineer */
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 #solutionsTreeParent {
-  width: 100%;
+  width: 480px;
   height: 720px;
   overflow-x: auto;
+}
+
+@media (min-width: 1360px) {
+  #solutionsTreeParent {
+    width: 800px;
+    height: 1024px;
+    overflow-x: auto;
+  }
 }
