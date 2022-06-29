@@ -94,7 +94,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 #### Resources
 
-- [root-node.json](web/src/root-node.json): sample tree object to render.
+- [root-node.json](web/static/root-node.json): sample tree object to render.
 - [model.ts](web/src/model.ts): assumed data model.
 - [mrm-canvas.ts](web/src/mrm-canvas.ts): underlying module.
 - [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
