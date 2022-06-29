@@ -4,33 +4,45 @@
 
 import './index.html';
 import './main.css';
+import { newTreeNode, TreeNode } from './model';
 import { SolutionsTreeCanvas } from './mrm-canvas';
 
-main().then(console.log);
+const main = Main();
+main.init().then(console.log);
 
-async function main() {
+function Main() {
+  let tree = newTreeNode();
+  return {
+    async init() {
+      tree = await loadTree();
+      window.onresize = () => render(tree);
+      render(tree);
+    }
+  };
+}
+
+function render(tree) {
   const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
   const canvas = new SolutionsTreeCanvas();
-  canvas.rootNode = await loadTree();
+  canvas.rootNode = tree;
 
   canvas.init(canvasEl);
   canvas.render();
 }
 
-async function loadTree() {
+async function loadTree(): Promise<TreeNode> {
   try {
     const res = await fetch(getTreeUrl());
-    console.log(res);
-    return await res.json()
+    return await res.json();
   }
   catch (e) {
     console.log(e);
   }
-  return {}
+  return newTreeNode();
 }
 
 function getTreeUrl() {
   const entry = 'draw-a-tree-on-canvas-with-xy-coordinates';
-  const path = 'web/src/root-node.json';
-  return `https://raw.githubusercontent.com/tobiasbriones/mathsoftware.engineer/${ entry }/representation/${ entry }/${ path }`;
+  const path = 'web/static/root-node.json';
+  return `https://raw.githubusercontent.com/tobiasbriones/mathsoftware.engineer/main/representation/${ entry }/${ path }`;
 }
