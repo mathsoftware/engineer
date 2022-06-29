@@ -9,13 +9,12 @@ body {
 #solutionsTreeParent {
   width: 480px;
   height: 720px;
-  overflow-x: auto;
+  margin: auto;
 }
 
 @media (min-width: 1360px) {
   #solutionsTreeParent {
     width: 800px;
     height: 1024px;
-    overflow-x: auto;
   }
 }
