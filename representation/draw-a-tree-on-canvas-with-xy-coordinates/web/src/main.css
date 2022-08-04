@@ -6,6 +6,41 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+header {
+  padding: 3% 5%;
+}
+
+nav  {
+  margin: auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  display: block;
+  text-align: center;
+}
+
+header a:link {
+  color: rgba(0, 0, 0, 0.89);
+  text-decoration: none;
+}
+
+header a:visited {
+  color: rgba(0, 0, 0, 0.89);
+}
+
+header a:hover {
+  color: #607D8B;
+}
+
+header a:active {
+  text-decoration: underline;
+}
+
 #solutionsTreeParent {
   width: 480px;
   height: 720px;
