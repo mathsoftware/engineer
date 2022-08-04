@@ -3,11 +3,8 @@
 /* This file is part of https://github.com/tobiasbriones/mathsoftware.engineer */
 
 body {
-  font-family: 'Poppins', sans-serif;
-}
-
-header {
   padding: 3% 5%;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav  {
@@ -44,7 +41,7 @@ header a:active {
 #solutionsTreeParent {
   width: 480px;
   height: 720px;
-  margin: auto;
+  margin: 3% auto;
 }
 
 @media (min-width: 1360px) {
