@@ -7,10 +7,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-nav  {
-  margin: auto;
-}
-
 h1 {
   text-transform: uppercase;
   text-align: center;
@@ -31,7 +27,7 @@ header a:visited {
 }
 
 header a:hover {
-  color: #607D8B;
+  color: #607d8b;
 }
 
 header a:active {
