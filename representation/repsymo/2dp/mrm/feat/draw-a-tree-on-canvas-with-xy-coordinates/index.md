@@ -21,7 +21,7 @@ represented as a tree that grows horizontally.
 
 The first solutions-tree given below, was made with HTML, CSS, and the DOM
 API (`div` elements). That version can be found at
-[EP: MRM](https://github.com/tobiasbriones/ep-machine-replacement-model). It's
+[EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep). It's
 recommended to check it out for understanding the problem better and getting
 textbook references. You can also review
 the [Repsymo Solver](https://repsymo.com) for a complete insight on this
