@@ -397,11 +397,11 @@ const cp = {
 
 #### Drawing a Node (`drawNode`)
 
-This is the recursive function to populate the whole tree from the root node. We
-take care of memoization to dynamically store the drawn nodes. For correctness
-effects we always render the node circle and its content but the node lines and
-labels (which are visually significant if rendered more than once) are only
-rendered once.
+This is the recursive function to populate the whole tree from the root node.
+**We take care of memoization to dynamically store the drawn nodes**. For
+correctness effects we always render the node circle and its content but the
+node lines and labels (which are visually significant if rendered more than
+once) are only rendered once.
 
 ```ts
 const point2d = { x: node.decisionYear, y: node.machineAge };
@@ -497,9 +497,10 @@ ctx.lineTo(nextX, nextY);
 ctx.stroke();
 ```
 
-The rectangle triangle defined by the two-node points is going to be useful for
-computing the directions for the outgoing lines from the current node to the
-next one. We simply use similar triangles to obtain the requesting points.
+**The rectangle triangle defined by the two-node points** is going to be 
+useful for **computing the directions for the outgoing lines from the current 
+node to the next one**. We simply use **similar triangles** to obtain the 
+requesting points.
 
 ![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
 
@@ -516,8 +517,8 @@ const triangle = (next: TreeNode) => {
 ```
 
 With that information we can draw the lines according to the corresponding
-quadrant: up, straight or right, down. The next node is always to the right as
-the decision year always increases.
+quadrant: up, straight or right, down. **The next node is always to the right as
+the decision year always increases**.
 
 ```ts
 const drawUpRightLabel = (next: TreeNode, label: string) => {
@@ -563,7 +564,7 @@ const drawLabelTo = (next: TreeNode, label: string) => {
 ```
 
 Finally, to implement the method `drawNodeLines` we draw the line to the
-"Keep" node and to the "Replace" node making use of recursion:
+"Keep" node and to the "Replace" node by **making use of recursion**:
 
 ```ts
 if (node.k) {
@@ -615,13 +616,14 @@ Analysis on correctness and performance is detailed.
 
 ### Memoization
 
-If we remove the memoization, nodes will be rendered more than once which is not
-accepted. The results are shown below. Recall that we still render the node
-circle and content to fix incorrectness but the lines and labels must not be
-drawn more than once. Excluding the lines (and labels) drawing is partial
-drawing, so we only draw the circle and content.
+**If we remove the memoization, nodes will be rendered more than once** which 
+is not accepted. The results are shown below. Recall that we still render the
+node circle and content to fix incorrectness but the **lines and labels must 
+not be drawn more than once**. Excluding the lines (and labels) drawing is 
+**partial drawing**, so we only draw the circle and content.
 
-The tree is binary containing $$15$$ nodes.
+The tree is binary, contains $$15$$ nodes, and we get the following number 
+of renderings:
 
 | Technique                                     | Rendering Times |
 |-----------------------------------------------|-----------------|
@@ -632,8 +634,9 @@ The tree is binary containing $$15$$ nodes.
 Hence, the `drawNode` function is called $$21$$ times to render the whole 
 tree but just $$15$$ of those are full rendering.
 
-With memoization off is visually clear that nodes are being rendered on top of
-themselves, so it's easy to stop that flaw:
+**With memoization off is visually clear that nodes are being rendered on top of
+themselves**, so it's easy to stop that flaw (notice node $$(4, 1)$$ for 
+instance):
 
 ![Memoization Off](memoization-off.png)
 
@@ -641,16 +644,18 @@ The problem, if we use full memoization, is as said before, correctness:
 
 ![Full Memoization](full-memoization.png)
 
-The optimization can be addressed by computing a more accurate model and just
+The optimization can be addressed by computing a *more accurate model* and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
 the other content.
 
 ### Order of Rendering
 
-By counting the time a node was drawn with full memoization and drawing it on
-top of the node in blue we can easily debug or follow the recursion process.
-Recall that, as said above, the last nodes from the bottom are partially drawn
-more times later.
+By counting the time a node was drawn with full memoization and drawing that 
+position on top of the node as a blue/purple counter we can easily debug or 
+follow the recursion process.
+
+Recall that, as said above, the last nodes from the bottom are *partially
+drawn* more times later.
 
 ![Drawing Order](drawing-order.png)
 
@@ -658,8 +663,8 @@ more times later.
 
 From the equipment replacement problem, we have one or more solutions that
 tell us what to do with the machine from the first decision year (result
-chains). For a given year, it might turn out that both solutions, keep and
-replace, yield the exact same effect, hence we have a bifurcation:
+chains). For a given year, it might turn out that **both options, keep and
+replace, yield the exact same effect**, hence we have a **bifurcation or fork**:
 we have to follow two branches, if we keep and if we replace. This produces a
 directed graph structure that looks similar to the tree that was developed.
 
@@ -668,8 +673,8 @@ the next year.
 
 ![Result Chains](result-chains.png)
 
-Since the solution tree is the set of all possible solutions to the problem,
-and particularly, the problem-solution belongs to the three which, with more
+Since the solution tree is the **set of all possible solutions** to the problem,
+and particularly, the **model solution belongs to the tree** which, with more
 clever work can be traced onto the same solution tree:
 
 **Traced Solution Tree:** The model solution can be drawn into the tree.
