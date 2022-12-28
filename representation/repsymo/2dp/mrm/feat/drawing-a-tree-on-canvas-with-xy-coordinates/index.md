@@ -702,16 +702,17 @@ what you're doing.
 That is not a problem of recursion as is, but a problem of computers, so use 
 recursion as a mathematician but think about it when engineering. 
 
-## Conclusion
+## Solution Tree Feature
 
-A typescript module was designed and developed to render a xy-axis and then the
-solutions' tree required. The HTML 5 Canvas API was used to achieve the main
-objective. A detailed analysis regarding recursion was given and also several
-recommendations and references to the reader.
+This case study for the feature `Solution Tree | MRM | 2DP Repsymo Solver`
+is taken to obtain insight and then employ the machine replacement model and
+the HTML5 Canvas API to address the modeling and design of this feature into a
+typescript module providing rendering for $$XY-axis$$ and the solution tree.
 
-Similar triangles were applied to position the node labels. For fixing and
-optimizing the recursive tree traversal rendering, standard memoization with
-a `Set` was applied.
+Basic trigonometry is needed to render some elements, like similar triangles 
+which are useful to position the node labels.
 
-An introduction with further scope of the machine replacement model was given as
-a value-added to the reader.
+Standard memoization with a `Set` helps to fix and optimize the recursive tree
+traversal rendering and detailed analysis on the recursion used as well as
+further insight on how this feature is evolving in the Repsymo Solver 
+complements the understanding of this topic.
