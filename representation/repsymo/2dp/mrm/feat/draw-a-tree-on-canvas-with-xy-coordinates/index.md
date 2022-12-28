@@ -5,7 +5,7 @@
 # Draw a Tree on Canvas with XY Coordinates
 
 A detailed design, development, and recursion analysis to draw a tree data
-structure with HTML Canvas and TypeScript are given from the solutions-tree 
+structure with HTML Canvas and TypeScript are given from the solutions-tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
@@ -15,7 +15,7 @@ The **Machine Replacement Model** is a deterministic dynamic programming model
 from Operations Research. It states that you have a machine with an initial age.
 You have a number of decision years to know what to do with that machine. Then,
 for each decision year, there are two options: **keep** the machine and pay
-maintenance (**K**), or **replace** the machine with a new one (**R**). All the 
+maintenance (**K**), or **replace** the machine with a new one (**R**). All the
 possible outcomes starting from the first decision year can be visually
 represented as a tree that grows horizontally.
 
@@ -23,19 +23,19 @@ The first solutions-tree given below, was made with HTML, CSS, and the DOM
 API (`div` elements). That version can be found at
 [EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep). It's
 recommended to check it out for understanding the problem better and getting
-textbook references. You can also review
-the [Repsymo Solver](https://repsymo.com) for a complete insight on this
-model (and more).
+textbook references. You can also review the
+[Repsymo Solver](https://repsymo.com) for a complete insight on this model
+(and more).
 
 ![Solutions Tree with HTML and CSS | EP: MRM](solutions-tree-with-html-and-css---ep-mrm.png)
 
 The chances are obviously limited and the lines from node to node are missing
 (hence the pairs (K, R) as labels). The other problem is that the data structure
-was a **two-dimensional array** but the underlying model corresponds to a 
-**tree**. This solution was a very good fit back in the day for moving forward 
+was a **two-dimensional array** but the underlying model corresponds to a
+**tree**. This solution was a very good fit back in the day for moving forward
 faster with the development.
 
-The problem consists of **populating the binary tree data structure onto a 
+The problem consists of **populating the binary tree data structure onto a
 canvas and also the xy-axes** to establish the position of each node.
 
 A browser canvas (or canvas in general) is not the best performant solution but
@@ -55,17 +55,17 @@ where its left panel with a populated root directory is also a tree.
 
 As said above, the nature of many problems is recursive.
 
-There are many ways of representing trees, one of them is the underlying 
-topic of this article: the solutions-tree of the MRM. Others are file 
+There are many ways of representing trees, one of them is the underlying topic
+of this article: the solutions-tree of the MRM. Others are file
 systems, and so on.
 
-When a wrong data structure is applied (due to engineering constraints) like 
-two-dimensional arrays (cartesian coordinates) to model what actually is a 
+When a wrong data structure is applied (due to engineering constraints) like
+two-dimensional arrays (cartesian coordinates) to model what actually is a
 tree (recursive) in this case, algorithms arise, and they're limited, convoluted
 and prone to errors.
 
-Applying the right data structure to a model has more engineering efforts, 
-but it homogenizes the problem down to a simple model that is elegant and 
+Applying the right data structure to a model has more engineering efforts,
+but it homogenizes the problem down to a simple model that is elegant and
 correct, in other words, the model **matches**[^1] the representation.
 
 [^1]: Notice FP pattern matching
