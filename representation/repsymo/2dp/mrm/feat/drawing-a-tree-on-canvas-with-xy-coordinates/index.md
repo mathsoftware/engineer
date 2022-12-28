@@ -9,6 +9,9 @@ structure with HTML Canvas and TypeScript are given from the solution tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
+The result is a
+[web app that renders an MRM solution tree within 2D coordinates](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+
 ## Original MRM Problem
 
 The **Machine Replacement Model (MRM)** is a deterministic dynamic programming
@@ -609,6 +612,8 @@ canvas.render();
 By running now, we get the desired result:
 
 ![Solution Tree Canvas](solution-tree-canvas.png)
+
+The result is deployed to the [web directory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
 
 ## Analysis
 
