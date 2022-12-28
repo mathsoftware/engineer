@@ -139,10 +139,10 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 - [triangle.py](triangle.py): generates the rectangle triangles figure.
 
-### Data Structures
+### Tree Model
 
 The solutions' tree for the machine replacement model consists of the following
-data structure:
+data type:
 
 ```ts
 interface TreeNode {
@@ -157,12 +157,12 @@ It follows that the independent variable $$x$$ is going to be the `decisionYear`
 attribute and the dependent variable $$y$$ the `machineAge`. The tree is binary
 so can have two children: `k` and `r`.
 
-Thus, we have a binary tree to draw on a `xy-plane`.
+Thus, we have a binary tree to draw on an `XY-plane`.
 
 This data structure is an external given model, so it should be added, say, 
 into a `model.ts` module.
 
-#### Canvas
+### Canvas Design
 
 The following base class is going to manage the canvases. It has the
 `HTMLCanvasElement` (with its respective context) member so the drawing is
@@ -474,7 +474,7 @@ canvas.render();
 
 ![Draw Node Circle and Content](draw-node-circle-and-content.png)
 
-#### Line with Labels from Node to Node (`drawNodeLines`)
+#### Line with Labels from Node-to-Node (`drawNodeLines`)
 
 First, we need some definitions to address this challenge:
 
