@@ -15,6 +15,61 @@ structure with HTML Canvas and TypeScript are given from the solution tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
+The result is a
+[web app that renders an MRM solution tree within 2D coordinates](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+
+## Contents
+
+- [Drawing a Tree on Canvas with XY Coordinates](#drawing-a-tree-on-canvas-with-xy-coordinates)
+  * [Original MRM Problem](#original-mrm-problem)
+    + [Other Kinds of Trees](#other-kinds-of-trees)
+    + [Tree Data Structure](#tree-data-structure)
+  * [Development](#development)
+    + [Getting Started](#getting-started)
+      - [Resources](#resources)
+        * [Other Resources](#other-resources)
+    + [Tree Model](#tree-model)
+    + [Canvas Design](#canvas-design)
+    + [Drawing the Axes](#drawing-the-axes)
+    + [Drawing the Tree](#drawing-the-tree)
+      - [Drawing a Node (`drawNode`)](#drawing-a-node---drawnode--)
+      - [Node Circle and Content (`drawNodeCircle` and `drawNodeContent`)](#node-circle-and-content---drawnodecircle--and--drawnodecontent--)
+      - [Line with Labels from Node-to-Node (`drawNodeLines`)](#line-with-labels-from-node-to-node---drawnodelines--)
+    + [Enhancing Rendering Sizes](#enhancing-rendering-sizes)
+    + [Result](#result)
+  * [Analysis](#analysis)
+    + [Memoization](#memoization)
+    + [Order of Rendering](#order-of-rendering)
+  * [More Recursion](#more-recursion)
+    + [Caveats on Recursion](#caveats-on-recursion)
+  * [Solution Tree Feature](#solution-tree-feature)
+
+### Meta
+
+Useful information to follow this article:
+
+#### Requirements
+
+##### Knowledge
+
+Moderate:
+
+- Tree data structure
+- Recursion
+
+Basic:
+
+- TS/JS, FP, OOP/OOD, DOM, and Canvas APIs
+- HTML
+- Trigonometry
+
+##### Tools
+
+- Internet Browser
+- Text editor/IDE (Webstorm, VSC, ...)
+- GitHub
+- Tree object (provided [here](web/static/root-node.json))
+
 ## Original MRM Problem
 
 The **Machine Replacement Model (MRM)** is a deterministic dynamic programming
@@ -23,7 +78,7 @@ initial age. We have a number of decision years to know what to do with that
 machine. Then, for each decision year, there are two options: **keep** the
 machine and pay maintenance (**K**), or **replace** the machine with a new one
 (**R**). All the possible outcomes starting from the first decision year can be
-visually represented as a tree that grows on the horizontal axis or the same, 
+visually represented as a tree that grows on the horizontal axis or the same,
 the independent variable (decision year).
 
 The first solution tree version depicted below was made with HTML, CSS, and
@@ -39,12 +94,12 @@ textbook references. It's also advisable to review the
     [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
-![Solution Tree with HTML and CSS | EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
 
-Chances are obviously limited and the connecting lines from a node to 
-its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other 
-problem is that the data structure was a **two-dimensional array** but the 
-underlying model corresponds to a **tree**. This solution was a very good fit 
+Chances are obviously limited and the connecting lines from a node to
+its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
+problem is that the data structure was a **two-dimensional array** but the
+underlying model corresponds to a **tree**. This solution was a very good fit
 back in the day for moving forward faster with the development.
 
 The problem consists of **populating the binary tree data structure onto a
@@ -76,13 +131,13 @@ where its left panel with a populated-root-directory is also a tree.
 
 As said above, the nature of many problems is recursive.
 
-There are many ways of representing trees, and one of them is the underlying 
+There are many ways of representing trees, and one of them is the underlying
 topic of this article: the solution tree of the MRM. Others are file
 systems, and so on.
 
 When a wrong data structure is applied (due to engineering constraints) like
 two-dimensional arrays (cartesian coordinates) to model what actually is a
-tree (recursive) in this case, algorithms arise, and they're limited, 
+tree (recursive) in this case, algorithms arise, and they're limited,
 convoluted, and prone to errors.
 
 Applying the right data structure to a model has more engineering efforts,
@@ -165,7 +220,7 @@ so can have two children: `k` and `r`.
 
 Thus, we have a binary tree to draw on an $$XY-plane$$.
 
-This data structure is an external given model, so it should be added, say, 
+This data structure is an external given model, so it should be added, say,
 into a `model.ts` module.
 
 ### Canvas Design
@@ -405,7 +460,7 @@ const cp = {
 
 This is the recursive function to populate the whole tree from the root node.
 **We take care of memoization to dynamically store the drawn nodes**. For
-correctness effects we always render the node circle and its content but the
+correctness effects, we always render the node circle and its content but the
 node lines and labels (which are visually significant if rendered more than
 once) are only rendered once.
 
@@ -425,7 +480,7 @@ memoization.add(point2dStr);
 So, it takes three steps:
 
 - Draw the outgoing lines with their corresponding labels.
-- Draw the circle with background and border.
+- Draw the circle with a background and border.
 - Draw the node content consisting of its `machineAge` (y-coordinate) attribute.
 
 The method `drawNodeLines` calls back to this method so initiates the recursion
@@ -503,9 +558,9 @@ ctx.lineTo(nextX, nextY);
 ctx.stroke();
 ```
 
-**The rectangle triangle defined by the two-node points** is going to be 
-useful for **computing the directions for the outgoing lines from the current 
-node to the next one**. We simply use **similar triangles** to obtain the 
+**The rectangle triangle defined by the two-node points** is going to be
+useful for **computing the directions for the outgoing lines from the current
+node to the next one**. We simply use **similar triangles** to obtain the
 requesting points.
 
 ![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
@@ -616,19 +671,21 @@ By running now, we get the desired result:
 
 ![Solution Tree Canvas](solution-tree-canvas.png)
 
+The result is deployed to the [web directory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+
 ## Analysis
 
 Analysis on correctness and performance is detailed.
 
 ### Memoization
 
-**If we remove the memoization, nodes will be rendered more than once** which 
-is not accepted. The results are shown below. Recall that we still render the
-node circle and content to fix incorrectness but the **lines and labels must 
-not be drawn more than once**. Excluding the lines (and labels) drawing is 
+**If we remove the memoization, nodes will be rendered more than once** which
+is not acceptable. The results are shown below. Recall that we still render the
+node circle and content to fix incorrectness but the **lines and labels must
+not be drawn more than once**. Excluding the lines (and labels) drawing is a
 **partial drawing**, so we only draw the circle and content.
 
-The tree is binary, contains $$15$$ nodes, and we get the following number 
+The tree is binary, contains $$15$$ nodes, and we get the following number
 of renderings:
 
 | Technique                                     | Rendering Times |
@@ -637,11 +694,11 @@ of renderings:
 | With Memoization (whole and partial drawings) | 21              |
 | Without Memoization                           | 31              |
 
-Hence, the `drawNode` function is called $$21$$ times to render the whole 
+Hence, the `drawNode` function is called $$21$$ times to render the whole
 tree but just $$15$$ of those are full rendering.
 
 **With memoization off is visually clear that nodes are being rendered on top of
-themselves**, so it's easy to stop that flaw (notice node $$(4, 1)$$ for 
+themselves**, so it's easy to stop that flaw (notice node $$(4, 1)$$ for
 instance):
 
 ![Memoization Off](memoization-off.png)
@@ -656,8 +713,8 @@ the other content.
 
 ### Order of Rendering
 
-By counting the time a node was drawn with full memoization and drawing that 
-position on top of the node as a blue/purple counter we can easily debug or 
+By counting the time a node was drawn with full memoization and drawing that
+position on top of the node as a blue/purple counter we can easily debug or
 follow the recursion process.
 
 Recall that, as said above, the last nodes from the bottom are *partially
@@ -671,7 +728,7 @@ From the equipment replacement problem, we have one or more solutions that
 tell us what to do with the machine from the first decision year (result
 chains). For a given year, it might turn out that **both options, keep and
 replace, yield the exact same effect**, hence we have a **bifurcation or fork**:
-we have to follow two branches, if we keep and if we replace. This produces a
+we have to follow two branches if we keep and if we replace. This produces a
 directed graph structure that looks similar to the tree that was developed.
 
 **Result Chains:** Replace the first year and then, two ways can be taken for
@@ -694,24 +751,25 @@ to learn more about it.
 ### Caveats on Recursion
 
 Many design and performance issues should be deeply addressed but that's another
-topic. The problem is that these languages like TS/JS and platforms like web 
-browser runtimes are not good for these problems. 
+topic. The problem is that languages like TS/JS and platforms like web browser
+runtimes are not good for these problems.
 
-Recall that, just functional languages implement TCE and TCO at first-class so
-the engineer or mathematician must be careful when using recursion. For 
-mainstream languages, imperative loops are to be used instead. 
+Recall that, just functional languages implement TCE and TCO at first class so
+the engineer or mathematician must be careful when using recursion. For
+mainstream languages, imperative loops are to be used instead.
 
-For mathematical models is key to design declarative systems but general-purpose
-computers don't support many abstractions and unfortunately, recursion is not so
-widely used due to the hardware being imperative as an obstacle.
+When it comes to mathematical models it's key to design declarative systems but
+general-purpose computers don't support many abstractions and unfortunately,
+recursion is not so widely used due to the hardware being imperative as an
+obstacle.
 
 In other words, be careful when using recursion. Recursion is key for
 defining mathematical models but computers don't understand math really well
 and imperative loops are preferred for most implementations unless you know
 what you're doing.
 
-That is not a problem of recursion as is, but a problem of computers, so use 
-recursion as a mathematician but think about it when engineering. 
+That is not a problem of recursion as is, but a problem of computers, so use
+recursion as a mathematician but think about it when engineering.
 
 ## Solution Tree Feature
 
@@ -720,10 +778,10 @@ is taken to obtain insight and then employ the machine replacement model and
 the HTML5 Canvas API to address the modeling and design of this feature into a
 typescript module providing rendering for $$XY-axis$$ and the solution tree.
 
-Basic trigonometry is needed to render some elements, like similar triangles 
+Basic trigonometry is needed to render some elements, like similar triangles
 which are useful to position the node labels.
 
 Standard memoization with a `Set` helps to fix and optimize the recursive tree
 traversal rendering and detailed analysis on the recursion used as well as
-further insight on how this feature is evolving in the Repsymo Solver 
+further insight on how this feature is evolving in the Repsymo Solver
 complements the understanding of this topic.
