@@ -20,13 +20,18 @@ machine and pay maintenance (**K**), or **replace** the machine with a new one
 visually represented as a tree that grows on the horizontal axis or the same, 
 the independent variable (decision year).
 
-The first solutions-tree version depicted below was made with HTML, CSS, and 
+The first solutions-tree version depicted below was made with HTML, CSS, and
 the DOM API (`div` elements). That version can be found at
-[EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep). It's
-recommended to check it out to understand the problem better and get
+[EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep)[^1].
+It's recommended to check it out to understand the problem better and get
 textbook references. It's also advisable to review the
 [Repsymo Solver](https://repsymo.com) for a complete insight into this model
 (and more).
+
+[^1]: **Example Project: Machine Replacement Model** was the first and
+    main OR project devised and developed by
+    [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
+    to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
 ![Solutions Tree with HTML and CSS | EP: MRM](solutions-tree-with-html-and-css---ep-mrm.png)
 
@@ -39,8 +44,17 @@ back in the day for moving forward faster with the development.
 The problem consists of **populating the binary tree data structure onto a
 canvas and also the XY-axes** to establish each node's position.
 
-A browser canvas (or canvas in general) is not the best performant solution but
-is a great step for this problem in terms of rendering and correctness.
+A browser canvas[^2] (or canvas in general) is not the best performant
+solution[^3] but is a great step for this problem in terms of rendering and
+correctness.
+
+[^2]: A Canvas is a popular, more flexible, and performant tool for specific
+    graphics than a user GUI library like for example the HTML DOM API or
+    Android Views, but it's a lower-level API, so it requires more work and
+    design which is probably what we're looking for
+
+[^3]: A Canvas is a lower-level tool than a GUI toolkit, but it's far from
+    the advanced top-performant techniques
 
 ### Other Kinds of Trees
 
@@ -67,9 +81,9 @@ convoluted, and prone to errors.
 
 Applying the right data structure to a model has more engineering efforts,
 but it homogenizes the problem down to a simple model that is elegant and
-correct, in other words, the model **matches**[^1] the representation.
+correct, in other words, the model **matches**[^4] the representation.
 
-[^1]: Notice FP pattern matching
+[^4]: Notice FP pattern matching
 
 ## Development
 
