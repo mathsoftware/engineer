@@ -5,7 +5,7 @@
 # Drawing a Tree on Canvas with XY Coordinates
 
 A detailed design, development, and recursion analysis to draw a tree data
-structure with HTML Canvas and TypeScript are given from the solutions' tree
+structure with HTML Canvas and TypeScript are given from the solution tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
@@ -20,7 +20,7 @@ machine and pay maintenance (**K**), or **replace** the machine with a new one
 visually represented as a tree that grows on the horizontal axis or the same, 
 the independent variable (decision year).
 
-The first solutions' tree version depicted below was made with HTML, CSS, and
+The first solution tree version depicted below was made with HTML, CSS, and
 the DOM API (`div` elements). That version can be found at
 [EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep)[^1].
 It's recommended to check it out to understand the problem better and get
@@ -71,7 +71,7 @@ where its left panel with a populated-root-directory is also a tree.
 As said above, the nature of many problems is recursive.
 
 There are many ways of representing trees, and one of them is the underlying 
-topic of this article: the solutions' tree of the MRM. Others are file
+topic of this article: the solution tree of the MRM. Others are file
 systems, and so on.
 
 When a wrong data structure is applied (due to engineering constraints) like
@@ -141,7 +141,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 ### Tree Model
 
-The solutions' tree for the machine replacement model consists of the following
+The solution tree for the machine replacement model consists of the following
 data type:
 
 ```ts
@@ -668,9 +668,9 @@ the next year.
 
 ![Result Chains](result-chains.png)
 
-Since the solutions' tree is the set of all possible solutions to the problem,
+Since the solution tree is the set of all possible solutions to the problem,
 and particularly, the problem-solution belongs to the three which, with more
-clever work can be traced onto the same solutions' tree:
+clever work can be traced onto the same solution tree:
 
 **Traced Solution Tree:** The model solution can be drawn into the tree.
 
