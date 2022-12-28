@@ -43,6 +43,7 @@ The result is a
   * [More Recursion](#more-recursion)
     + [Caveats on Recursion](#caveats-on-recursion)
   * [Solution Tree Feature](#solution-tree-feature)
+  * [Bibliography](#bibliography)
 
 ### Meta
 
@@ -95,6 +96,10 @@ textbook references. It's also advisable to review the
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
 ![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+
+<figcaption>
+<p align="center"><strong>Solution Tree with HTML and CSS | EP: MRM</strong></p>
+</figcaption>
 
 Chances are obviously limited and the connecting lines from a node to
 its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
@@ -179,6 +184,10 @@ contain the following specification that is going to be detailed along with this
 article:
 
 ![Module MRM Canvas | UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
+
+<figcaption>
+<p align="center"><strong>Module MRM Canvas | UML Class Diagram</strong></p>
+</figcaption>
 
 This function is going to help with some calculations:
 
@@ -385,6 +394,10 @@ axesCanvas.render();
 
 ![Axes Canvas](axes-canvas.png)
 
+<figcaption>
+<p align="center"><strong>Axes Canvas</strong></p>
+</figcaption>
+
 ### Drawing the Tree
 
 The tree canvas is quite more complicated. The class consists of the following
@@ -532,6 +545,12 @@ canvas.render();
 
 ![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
 
+
+<figcaption>
+<p align="center"><strong>Drawing Node Circle and Content</strong></p>
+</figcaption>
+
+
 #### Line with Labels from Node-to-Node (`drawNodeLines`)
 
 First, we need some definitions to address this challenge:
@@ -564,6 +583,10 @@ node to the next one**. We simply use **similar triangles** to obtain the
 requesting points.
 
 ![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
+
+<figcaption>
+<p align="center"><strong>Triangle for Tangent Point at Node-to-Node Line</strong></p>
+</figcaption>
 
 ```ts
 const triangle = (next: TreeNode) => {
@@ -671,6 +694,10 @@ By running now, we get the desired result:
 
 ![Solution Tree Canvas](solution-tree-canvas.png)
 
+<figcaption>
+<p align="center"><strong>Solution Tree Canvas</strong></p>
+</figcaption>
+
 The result is deployed to the [web directory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
 
 ## Analysis
@@ -703,9 +730,17 @@ instance):
 
 ![Memoization Off](memoization-off.png)
 
+<figcaption>
+<p align="center"><strong>Memoization Off</strong></p>
+</figcaption>
+
 The problem, if we use full memoization, is as said before, correctness:
 
 ![Full Memoization](full-memoization.png)
+
+<figcaption>
+<p align="center"><strong>Full Memoization</strong></p>
+</figcaption>
 
 The optimization can be addressed by computing a *more accurate model* and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
@@ -722,6 +757,10 @@ drawn* more times later.
 
 ![Drawing Order](drawing-order.png)
 
+<figcaption>
+<p align="center"><strong>Drawing Order</strong></p>
+</figcaption>
+
 ## More Recursion
 
 From the equipment replacement problem, we have one or more solutions that
@@ -736,6 +775,10 @@ the next year.
 
 ![Result Chains](result-chains.png)
 
+<figcaption>
+<p align="center"><strong>Result Chains</strong></p>
+</figcaption>
+
 Since the solution tree is the **set of all possible solutions** to the problem,
 and particularly, the **model solution belongs to the tree** which, with more
 clever work can be traced onto the same solution tree:
@@ -743,6 +786,10 @@ clever work can be traced onto the same solution tree:
 **Traced Solution Tree:** The model solution can be drawn into the tree.
 
 ![Traced Solution Tree](traced-solution-tree.png)
+
+<figcaption>
+<p align="center"><strong>Traced Solutions Tree</strong></p>
+</figcaption>
 
 Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
