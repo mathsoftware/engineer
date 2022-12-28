@@ -90,7 +90,7 @@ correct, in other words, the model **matches**[^4] the representation.
 Two elements are required to draw on the canvas, namely, the 2D-Axis and the
 tree that grows horizontally.
 
-### Get Started
+### Getting Started
 
 Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
