@@ -15,7 +15,7 @@ Moderate:
 
 Basic:
 
-- TS/JS, OOP, DOM, and Canvas APIs
+- TS/JS, FP, OOP/OOD, DOM, and Canvas APIs
 - HTML
 - Trigonometry
 
