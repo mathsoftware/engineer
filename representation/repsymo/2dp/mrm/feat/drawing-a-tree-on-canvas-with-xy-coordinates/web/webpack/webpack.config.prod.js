@@ -13,7 +13,7 @@ const commonConfig = require('./webpack.config.common');
 const copyrightHeader =
 `Copyright (c) 2022 Tobias Briones. All rights reserved.
 SPDX-License-Identifier: MIT
-This file is part of https://github.com/tobiasbriones/mathsoftware.engineer`;
+This file is part of https://github.com/mathsoftware/engineer`;
 
 const mode = 'production';
 const plugins = [

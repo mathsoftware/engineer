@@ -1,6 +1,6 @@
 // Copyright (c) 2022 Tobias Briones. All rights reserved.
 // SPDX-License-Identifier: MIT
-// This file is part of https://github.com/tobiasbriones/mathsoftware.engineer
+// This file is part of https://github.com/mathsoftware/engineer
 //
 // This file is also available at https://github.com/repsymo/2dp-repsymo-solver
 // under a different license.
