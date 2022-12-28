@@ -322,8 +322,6 @@ axesCanvas.init(canvasEl);
 axesCanvas.render();
 ```
 
-**Axes Canvas**
-
 ![Axes Canvas](axes-canvas.png)
 
 ### Drawing the Tree
@@ -471,8 +469,6 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
-**Draw Node Circle and Content**
-
 ![Draw Node Circle and Content](draw-node-circle-and-content.png)
 
 #### Line with Labels from Node-to-Node (`drawNodeLines`)
@@ -611,8 +607,6 @@ canvas.render();
 
 By running now, we get the desired result:
 
-**Solutions Tree Canvas**
-
 ![Solutions Tree Canvas](solutions-tree-canvas.png)
 
 ### Analysis
@@ -639,13 +633,9 @@ tree but just $$15$$ of those are full rendering.
 With memoization off is visually clear that nodes are being rendered on top of
 themselves, so it's easy to stop that flaw:
 
-**Memoization Off**
-
 ![Memoization Off](memoization-off.png)
 
 The problem, if we use full memoization, is as said before, correctness:
-
-**Full Memoization**
 
 ![Full Memoization](full-memoization.png)
 
