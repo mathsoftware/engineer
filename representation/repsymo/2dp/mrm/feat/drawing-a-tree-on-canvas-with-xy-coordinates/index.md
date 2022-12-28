@@ -183,7 +183,7 @@ Create the module `mrm-canvas` that is going to be developed. It's going to
 contain the following specification that is going to be detailed along with this
 article:
 
-![Module MRM Canvas | UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
+![Module MRM Canvas \| UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
 
 <figcaption>
 <p align="center"><strong>Module MRM Canvas | UML Class Diagram</strong></p>
