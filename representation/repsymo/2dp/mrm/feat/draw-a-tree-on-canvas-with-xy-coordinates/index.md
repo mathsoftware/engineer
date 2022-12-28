@@ -1,6 +1,6 @@
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-<!-- This file is part of https://github.com/tobiasbriones/mathsoftware.engineer -->
+<!-- This file is part of https://github.com/mathsoftware/engineer -->
 
 # Draw a Tree on Canvas with XY Coordinates
 
