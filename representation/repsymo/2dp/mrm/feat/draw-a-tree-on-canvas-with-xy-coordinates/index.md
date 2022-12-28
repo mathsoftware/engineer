@@ -11,32 +11,33 @@ model from the operations research field.
 
 ## Original MRM Problem
 
-The **Machine Replacement Model** is a deterministic dynamic programming model
-from Operations Research. It states that you have a machine with an initial age.
-You have a number of decision years to know what to do with that machine. Then,
-for each decision year, there are two options: **keep** the machine and pay
-maintenance (**K**), or **replace** the machine with a new one (**R**). All the
-possible outcomes starting from the first decision year can be visually
-represented as a tree that grows horizontally.
+The **Machine Replacement Model (MRM)** is a deterministic dynamic programming
+model from operations research. It states that you have a machine with an
+initial age. You have a number of decision years to know what to do with that
+machine. Then, for each decision year, there are two options: **keep** the
+machine and pay maintenance (**K**), or **replace** the machine with a new one
+(**R**). All the possible outcomes starting from the first decision year can be
+visually represented as a tree that grows on the horizontal axis or the same, 
+the independent variable (decision year).
 
-The first solutions-tree given below, was made with HTML, CSS, and the DOM
-API (`div` elements). That version can be found at
+The first solutions-tree version depicted below was made with HTML, CSS, and 
+the DOM API (`div` elements). That version can be found at
 [EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep). It's
-recommended to check it out for understanding the problem better and getting
-textbook references. You can also review the
-[Repsymo Solver](https://repsymo.com) for a complete insight on this model
+recommended to check it out to understand the problem better and get
+textbook references. It's also advisable to review the
+[Repsymo Solver](https://repsymo.com) for a complete insight into this model
 (and more).
 
 ![Solutions Tree with HTML and CSS | EP: MRM](solutions-tree-with-html-and-css---ep-mrm.png)
 
-The chances are obviously limited and the lines from node to node are missing
-(hence the pairs (K, R) as labels). The other problem is that the data structure
-was a **two-dimensional array** but the underlying model corresponds to a
-**tree**. This solution was a very good fit back in the day for moving forward
-faster with the development.
+Chances are obviously limited and the connecting lines from a node to 
+its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other 
+problem is that the data structure was a **two-dimensional array** but the 
+underlying model corresponds to a **tree**. This solution was a very good fit 
+back in the day for moving forward faster with the development.
 
 The problem consists of **populating the binary tree data structure onto a
-canvas and also the xy-axes** to establish the position of each node.
+canvas and also the XY-axes** to establish each node's position.
 
 A browser canvas (or canvas in general) is not the best performant solution but
 is a great step for this problem in terms of rendering and correctness.
@@ -49,20 +50,20 @@ implement recursion as the natural or mathematical definition of the problem.
 Here is another project showing some recursion and designed to work with file
 systems
 [CP: Distributed Text File System](https://github.com/tobiasbriones/distributed-text-file-system---cp)
-where its left panel with a populated root directory is also a tree.
+where its left panel with a populated-root-directory is also a tree.
 
 ### Tree Data Structure
 
 As said above, the nature of many problems is recursive.
 
-There are many ways of representing trees, one of them is the underlying topic
-of this article: the solutions-tree of the MRM. Others are file
+There are many ways of representing trees, and one of them is the underlying 
+topic of this article: the solutions' tree of the MRM. Others are file
 systems, and so on.
 
 When a wrong data structure is applied (due to engineering constraints) like
 two-dimensional arrays (cartesian coordinates) to model what actually is a
-tree (recursive) in this case, algorithms arise, and they're limited, convoluted
-and prone to errors.
+tree (recursive) in this case, algorithms arise, and they're limited, 
+convoluted, and prone to errors.
 
 Applying the right data structure to a model has more engineering efforts,
 but it homogenizes the problem down to a simple model that is elegant and
