@@ -8,7 +8,7 @@
 
 ## Index
 
-Go to:
+### Subdomain Websites
 
 - [Blog](https://blog.mathsoftware.engineer): Math Software Engineer's blog.
 - [Dev](https://dev.mathsoftware.engineer): Software Development projects.
