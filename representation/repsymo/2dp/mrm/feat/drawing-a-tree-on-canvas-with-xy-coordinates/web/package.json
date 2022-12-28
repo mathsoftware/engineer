@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "description": "Draw a Tree on Canvas with XY Coordinates (Web)",
+  "description": "Drawing a Tree on Canvas with XY Coordinates (Web)",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Tobias Briones",
