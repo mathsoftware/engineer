@@ -611,6 +611,8 @@ By running now, we get the desired result:
 
 ### Analysis
 
+Analysis on correctness and performance is detailed.
+
 #### Memoization
 
 If we remove the memoization, nodes will be rendered more than once which is not
