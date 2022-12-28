@@ -656,10 +656,10 @@ more times later.
 
 ### More Recursion
 
-From the equipment replacement problem, we have a solution that tells you what
-to do with the machine or equipment from the first decision year
-(result chains). For a given year, it might turn out that both solutions, keep
-or replace, yield the exact same effect, hence we have a bifurcation:
+From the equipment replacement problem, we have one or more solutions that
+tell us what to do with the machine from the first decision year (result
+chains). For a given year, it might turn out that both solutions, keep and
+replace, yield the exact same effect, hence we have a bifurcation:
 we have to follow two branches, if we keep and if we replace. This produces a
 directed graph structure that looks similar to the tree that was developed.
 
