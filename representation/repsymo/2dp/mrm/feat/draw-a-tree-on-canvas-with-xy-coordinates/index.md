@@ -48,7 +48,7 @@ directories and files from your disk. For working with trees we natively
 implement recursion as the natural or mathematical definition of the problem.
 Here is another project showing some recursion and designed to work with file
 systems
-[CP: Dist. Text File System](https://github.com/tobiasbriones/cp-unah-mm545-distributed-text-file-system)
+[CP: Distributed Text File System](https://github.com/tobiasbriones/distributed-text-file-system---cp)
 where its left panel with a populated root directory is also a tree.
 
 ## Development
