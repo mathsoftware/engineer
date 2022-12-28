@@ -469,7 +469,7 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
-![Draw Node Circle and Content](draw-node-circle-and-content.png)
+![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
 
 #### Line with Labels from Node-to-Node (`drawNodeLines`)
 
