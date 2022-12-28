@@ -1,3 +1,9 @@
+---
+permalink: /drawing-a-tree-on-canvas-with-xy-coordinates
+title: Drawing a Tree on Canvas with XY Coordinates
+description: A detailed design, development, and recursion analysis to draw a tree data structure with HTML Canvas and TypeScript are given from the solution tree feature implemented into the 2DP Repsymo Solver for the machine replacement model from the operations research field.
+ogimage: 
+---
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/mathsoftware/engineer -->
