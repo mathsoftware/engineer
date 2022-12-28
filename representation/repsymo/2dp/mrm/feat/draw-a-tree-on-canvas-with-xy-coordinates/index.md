@@ -5,22 +5,22 @@
 # Draw a Tree on Canvas with XY Coordinates
 
 A detailed design, development, and recursion analysis to draw a tree data
-structure with HTML Canvas and TypeScript are given from the solutions-tree
+structure with HTML Canvas and TypeScript are given from the solutions' tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
 ## Original MRM Problem
 
 The **Machine Replacement Model (MRM)** is a deterministic dynamic programming
-model from operations research. It states that you have a machine with an
-initial age. You have a number of decision years to know what to do with that
+model from operations research. It states that we have a machine with an
+initial age. We have a number of decision years to know what to do with that
 machine. Then, for each decision year, there are two options: **keep** the
 machine and pay maintenance (**K**), or **replace** the machine with a new one
 (**R**). All the possible outcomes starting from the first decision year can be
 visually represented as a tree that grows on the horizontal axis or the same, 
 the independent variable (decision year).
 
-The first solutions-tree version depicted below was made with HTML, CSS, and
+The first solutions' tree version depicted below was made with HTML, CSS, and
 the DOM API (`div` elements). That version can be found at
 [EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep)[^1].
 It's recommended to check it out to understand the problem better and get
@@ -133,7 +133,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 - [model.ts](web/src/model.ts): assumed data model.
 - [mrm-canvas.ts](web/src/mrm-canvas.ts): underlying module.
 - [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
-  containing the initial development step by step.
+  containing the initial step-by-step development.
 
 ##### Other Resources
 
@@ -141,7 +141,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 ### Data Structures
 
-The solutions-tree for the machine replacement model consists of the following
+The solutions' tree for the machine replacement model consists of the following
 data structure:
 
 ```ts
@@ -155,12 +155,12 @@ interface TreeNode {
 
 It follows that the independent variable `x` is going to be the `decisionYear`
 attribute and the dependent variable `y` the `machineAge`. The tree is binary
-which can have two children: `k` and `r`.
+so can have two children: `k` and `r`.
 
 Thus, we have a binary tree to draw on a `xy-plane`.
 
-This data structure is an external given model, so you should add it, say, into
-a `model.ts` module.
+This data structure is an external given model, so it should be added, say, 
+into a `model.ts` module.
 
 #### Canvas
 
@@ -693,9 +693,9 @@ the next year.
 
 ![Result Chains](result-chains.png)
 
-Since the solutions-tree is the set of all possible solutions to the problem,
+Since the solutions' tree is the set of all possible solutions to the problem,
 and particularly, the problem-solution belongs to the three which, with more
-clever work can be traced onto the same solutions-tree:
+clever work can be traced onto the same solutions' tree:
 
 **Traced Solutions Tree:** The model solution can be drawn into the tree.
 
@@ -734,7 +734,7 @@ recursion as a mathematician but think about it when being an engineer.
 ## Conclusion
 
 A typescript module was designed and developed to render a xy-axis and then the
-solutions-tree required. The HTML 5 Canvas API was used to achieve the main
+solutions' tree required. The HTML 5 Canvas API was used to achieve the main
 objective. A detailed analysis regarding recursion was given and also several
 recommendations and references to the reader.
 
