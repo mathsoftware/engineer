@@ -607,7 +607,7 @@ canvas.render();
 
 By running now, we get the desired result:
 
-![Solutions Tree Canvas](solutions-tree-canvas.png)
+![Solution Tree Canvas](solution-tree-canvas.png)
 
 ## Analysis
 
