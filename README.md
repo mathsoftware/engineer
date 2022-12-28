@@ -2,6 +2,8 @@
 
 [![GitHub Repository](https://img.shields.io/static/v1?label=GITHUB&message=REPOSITORY&labelColor=555&color=0277bd&style=for-the-badge&logo=GITHUB)](https://github.com/mathsoftware/engineer)
 
+[![GitHub Project License](https://img.shields.io/github/license/mathsoftware/engineer.svg?style=flat-square)](https://github.com/mathsoftware/engineer#license)
+
 Math Software Engineer's home.
 
 ## Contact
