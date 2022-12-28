@@ -28,7 +28,7 @@ Basic:
 
 ## Bibliography
 
-- [Pull Request: Add module mrm-canvas &#124; 2DP Repsymo Solver](https://github.com/repsymo/2dp-repsymo-solver/pull/21)
+- [Pull Request: Add module mrm-canvas \| 2DP Repsymo Solver](https://github.com/repsymo/2dp-repsymo-solver/pull/21)
 - [Example Project: Machine Replacement Model](https://github.com/tobiasbriones/ep-machine-replacement-model)
 - [Canvas API &#124; MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 - [Operations Research: An Introduction by Hamdy Taha](https://amzn.com/dp/0134444019)
