@@ -41,6 +41,8 @@ canvas and also the xy-axes** to establish the position of each node.
 A browser canvas (or canvas in general) is not the best performant solution but
 is a great step for this problem in terms of rendering and correctness.
 
+### Other Kinds of Trees
+
 Another more common tree data structure is a file explorer which loads your
 directories and files from your disk. For working with trees we natively
 implement recursion as the natural or mathematical definition of the problem.
