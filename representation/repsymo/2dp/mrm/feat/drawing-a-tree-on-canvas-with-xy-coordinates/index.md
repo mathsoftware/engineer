@@ -788,7 +788,7 @@ clever work can be traced onto the same solution tree:
 ![Traced Solution Tree](traced-solution-tree.png)
 
 <figcaption>
-<p align="center"><strong>Traced Solutions Tree</strong></p>
+<p align="center"><strong>Traced Solution Tree</strong></p>
 </figcaption>
 
 Check out
