@@ -42,7 +42,5 @@ async function loadTree(): Promise<TreeNode> {
 }
 
 function getTreeUrl() {
-  const entry = 'drawing-a-tree-on-canvas-with-xy-coordinates';
-  const path = 'web/static/root-node.json';
-  return `https://raw.githubusercontent.com/tobiasbriones/mathsoftware.engineer/main/representation/${ entry }/${ path }`;
+  return `https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web/root-node.json`
 }
