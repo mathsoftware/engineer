@@ -785,3 +785,12 @@ Standard memoization with a `Set` helps to fix and optimize the recursive tree
 traversal rendering and detailed analysis on the recursion used as well as
 further insight on how this feature is evolving in the Repsymo Solver
 complements the understanding of this topic.
+
+## Bibliography
+
+- [Pull Request: Add module mrm-canvas \| 2DP Repsymo Solver](https://github.com/repsymo/2dp-repsymo-solver/pull/21)
+- [Example Project: Machine Replacement Model \| Math Software Engineer](https://github.com/tobiasbriones/ep-machine-replacement-model)
+- [Canvas API \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+- [Operations Research: An Introduction by Hamdy Taha \| Amazon](https://amzn.com/dp/0134444019)
+- [CS 6120: Tail Call Elimination \| Computer Science \| Cornell](https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/tail-call-elimination)
+- [Tail Recursion \| Computer Science \| Cornell](https://www.cs.cornell.edu/courses/JavaAndDS/files/recursionTail.pdf)
