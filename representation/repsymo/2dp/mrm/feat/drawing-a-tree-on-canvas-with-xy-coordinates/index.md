@@ -672,9 +672,9 @@ Since the solutions' tree is the set of all possible solutions to the problem,
 and particularly, the problem-solution belongs to the three which, with more
 clever work can be traced onto the same solutions' tree:
 
-**Traced Solutions Tree:** The model solution can be drawn into the tree.
+**Traced Solution Tree:** The model solution can be drawn into the tree.
 
-![Traced Solutions Tree](traced-solutions-tree.png)
+![Traced Solution Tree](traced-solution-tree.png)
 
 Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
