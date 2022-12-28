@@ -609,11 +609,11 @@ By running now, we get the desired result:
 
 ![Solutions Tree Canvas](solutions-tree-canvas.png)
 
-### Analysis
+## Analysis
 
 Analysis on correctness and performance is detailed.
 
-#### Memoization
+### Memoization
 
 If we remove the memoization, nodes will be rendered more than once which is not
 accepted. The results are shown below. Recall that we still render the node
@@ -645,7 +645,7 @@ The optimization can be addressed by computing a more accurate model and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
 the other content.
 
-#### Order of Rendering
+### Order of Rendering
 
 By counting the time a node was drawn with full memoization and drawing it on
 top of the node in blue we can easily debug or follow the recursion process.
@@ -654,7 +654,7 @@ more times later.
 
 ![Drawing Order](drawing-order.png)
 
-### More Recursion
+## More Recursion
 
 From the equipment replacement problem, we have one or more solutions that
 tell us what to do with the machine from the first decision year (result
@@ -680,7 +680,7 @@ Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
 to learn more about it.
 
-#### Caveats on Recursion
+### Caveats on Recursion
 
 Many design and performance issues should be deeply addressed but that's another
 topic. The problem is that these languages like TS/JS and platforms like web 
