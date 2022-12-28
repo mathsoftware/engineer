@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/mathsoftware/engineer -->
 
-# Draw a Tree on Canvas with XY Coordinates
+# Drawing a Tree on Canvas with XY Coordinates
 
 A detailed design, development, and recursion analysis to draw a tree data
 structure with HTML Canvas and TypeScript are given from the solutions' tree
