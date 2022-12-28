@@ -33,7 +33,7 @@ textbook references. It's also advisable to review the
     [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
-![Solution Tree with HTML and CSS | EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
 
 Chances are obviously limited and the connecting lines from a node to 
 its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other 
