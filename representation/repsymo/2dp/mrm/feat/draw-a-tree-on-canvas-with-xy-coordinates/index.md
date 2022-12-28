@@ -51,6 +51,25 @@ systems
 [CP: Distributed Text File System](https://github.com/tobiasbriones/distributed-text-file-system---cp)
 where its left panel with a populated root directory is also a tree.
 
+### Tree Data Structure
+
+As said above, the nature of many problems is recursive.
+
+There are many ways of representing trees, one of them is the underlying 
+topic of this article: the solutions-tree of the MRM. Others are file 
+systems, and so on.
+
+When a wrong data structure is applied (due to engineering constraints) like 
+two-dimensional arrays (cartesian coordinates) to model what actually is a 
+tree (recursive) in this case, algorithms arise, and they're limited, convoluted
+and prone to errors.
+
+Applying the right data structure to a model has more engineering efforts, 
+but it homogenizes the problem down to a simple model that is elegant and 
+correct, in other words, the model **matches**[^1] the representation.
+
+[^1]: Notice FP pattern matching
+
 ## Development
 
 Two elements are required to draw on the canvas, namely, the 2D-Axis and the
