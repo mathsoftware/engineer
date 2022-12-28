@@ -157,7 +157,7 @@ It follows that the independent variable $$x$$ is going to be the `decisionYear`
 attribute and the dependent variable $$y$$ the `machineAge`. The tree is binary
 so can have two children: `k` and `r`.
 
-Thus, we have a binary tree to draw on an `XY-plane`.
+Thus, we have a binary tree to draw on an $$XY-plane$$.
 
 This data structure is an external given model, so it should be added, say, 
 into a `model.ts` module.
@@ -229,9 +229,10 @@ ctx.lineWidth = 1;
 ctx.stroke();
 ```
 
-To draw the `X` axis labels, set the text-align center and draw the abscissa
-value from `0` until a maximum set value. There is a variable `cellSizePx` that
-tells the width and height of each cell in the `xy` plane (first quadrant).
+To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
+value from $$0$$$ until a maximum set value. There is a variable `cellSizePx`
+that tells the width and height of each cell in the $$XY-plane$$$ (first
+quadrant).
 
 ```ts
 ctx.textAlign = 'center';
@@ -242,8 +243,8 @@ for (let i = 0; i <= this.maxAbscissa; i++) {
 }
 ```
 
-For drawing the `Y` axis labels some minor considerations are taken into account
-to draw it properly.
+For drawing the $$Y$$ axis labels some minor considerations are taken into
+account to draw it properly.
 
 ```ts
 ctx.textAlign = 'start';
@@ -485,9 +486,9 @@ const isNodeNext = (next: TreeNode) => node.machineAge === 1 && next.machineAge 
 const isNodeBelow = (next: TreeNode) => node.machineAge < next.machineAge;
 ```
 
-The `x`, `y` coordinates are the center of the node (Center Point). The arrows
+The $$(x, y)$$ coordinates are the center of the node (Center Point). The arrows
 tell us if the next node is just to the right of the current node
-(iff both nodes' ordinates are the same and equal to `1` for this problem).
+(iff both nodes' ordinates are the same and equal to $$1$$ for this problem).
 
 Drawing the line is straightforward:
 
