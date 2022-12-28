@@ -9,7 +9,7 @@ structure with HTML Canvas and TypeScript are given from the solutions-tree
 feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
-## Introduction
+## Original MRM Problem
 
 The **Machine Replacement Model** is a deterministic dynamic programming model
 from Operations Research. It states that you have a machine with an initial age.
