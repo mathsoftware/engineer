@@ -4,11 +4,10 @@
 
 # Draw a Tree on Canvas with XY Coordinates
 
-In this article, a detailed design and development of how to draw a tree data
-structure with HTML Canvas and TypeScript are given. The problem arose from the
-development of a solutions-tree useful for the machine replacement problem from
-the operations research field. Detailed analysis on the recursion applied is
-also developed.
+A detailed design, development, and recursion analysis to draw a tree data
+structure with HTML Canvas and TypeScript are given from the solutions-tree 
+feature implemented into the 2DP Repsymo Solver for the machine replacement
+model from the operations research field.
 
 ## Introduction
 
