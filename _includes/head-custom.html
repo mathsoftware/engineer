@@ -4,6 +4,9 @@
 <meta name="twitter:creator" content="@tobiasbriones_">
 <meta name="twitter:site" content="@tobiasbriones_">
 <meta name="twitter:card" content="summary_large_image">
+
+{% if page.title %}<title>{{ page.title }}</title>{% endif %}
+
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 {% if page.description %}<meta name="twitter:description" content="{{ page.description }}">{% endif %}
 
