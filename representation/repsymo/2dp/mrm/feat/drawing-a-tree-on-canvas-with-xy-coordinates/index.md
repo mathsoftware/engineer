@@ -402,7 +402,7 @@ const cp = {
 
 This is the recursive function to populate the whole tree from the root node.
 **We take care of memoization to dynamically store the drawn nodes**. For
-correctness effects we always render the node circle and its content but the
+correctness effects, we always render the node circle and its content but the
 node lines and labels (which are visually significant if rendered more than
 once) are only rendered once.
 
@@ -422,7 +422,7 @@ memoization.add(point2dStr);
 So, it takes three steps:
 
 - Draw the outgoing lines with their corresponding labels.
-- Draw the circle with background and border.
+- Draw the circle with a background and border.
 - Draw the node content consisting of its `machineAge` (y-coordinate) attribute.
 
 The method `drawNodeLines` calls back to this method so initiates the recursion
@@ -621,13 +621,13 @@ Analysis on correctness and performance is detailed.
 
 ### Memoization
 
-**If we remove the memoization, nodes will be rendered more than once** which 
-is not accepted. The results are shown below. Recall that we still render the
-node circle and content to fix incorrectness but the **lines and labels must 
-not be drawn more than once**. Excluding the lines (and labels) drawing is 
+**If we remove the memoization, nodes will be rendered more than once** which
+is not acceptable. The results are shown below. Recall that we still render the
+node circle and content to fix incorrectness but the **lines and labels must
+not be drawn more than once**. Excluding the lines (and labels) drawing is a
 **partial drawing**, so we only draw the circle and content.
 
-The tree is binary, contains $$15$$ nodes, and we get the following number 
+The tree is binary, contains $$15$$ nodes, and we get the following number
 of renderings:
 
 | Technique                                     | Rendering Times |
@@ -670,7 +670,7 @@ From the equipment replacement problem, we have one or more solutions that
 tell us what to do with the machine from the first decision year (result
 chains). For a given year, it might turn out that **both options, keep and
 replace, yield the exact same effect**, hence we have a **bifurcation or fork**:
-we have to follow two branches, if we keep and if we replace. This produces a
+we have to follow two branches if we keep and if we replace. This produces a
 directed graph structure that looks similar to the tree that was developed.
 
 **Result Chains:** Replace the first year and then, two ways can be taken for
@@ -693,16 +693,17 @@ to learn more about it.
 ### Caveats on Recursion
 
 Many design and performance issues should be deeply addressed but that's another
-topic. The problem is that these languages like TS/JS and platforms like web 
-browser runtimes are not good for these problems. 
+topic. The problem is that languages like TS/JS and platforms like web browser
+runtimes are not good for these problems. 
 
-Recall that, just functional languages implement TCE and TCO at first-class so
+Recall that, just functional languages implement TCE and TCO at first class so
 the engineer or mathematician must be careful when using recursion. For 
 mainstream languages, imperative loops are to be used instead. 
 
-For mathematical models is key to design declarative systems but general-purpose
-computers don't support many abstractions and unfortunately, recursion is not so
-widely used due to the hardware being imperative as an obstacle.
+When it comes to mathematical models it's key to design declarative systems but 
+general-purpose computers don't support many abstractions and unfortunately, 
+recursion is not so widely used due to the hardware being imperative as an 
+obstacle.
 
 In other words, be careful when using recursion. Recursion is key for
 defining mathematical models but computers don't understand math really well
