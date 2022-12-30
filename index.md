@@ -1,6 +1,6 @@
 <!-- Copyright (c) 2021-present Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-<!-- This file is part of https://github.com/tobiasbriones/mathsoftware.engineer -->
+<!-- This file is part of https://github.com/mathsoftware/engineer -->
 
 <!-- Author: Tobias Briones -->
 
@@ -8,7 +8,12 @@
 
 ## Index
 
-Go to:
+- [Representation](representation): Mathematical models are abstract, but they
+  can be represented via graphics by applying math software engineering.
+  - [Drawing a Tree on Canvas with XY Coordinates](drawing-a-tree-on-canvas-with-xy-coordinates)
+
+
+### Subdomain Websites
 
 - [Blog](https://blog.mathsoftware.engineer): Math Software Engineer's blog.
 - [Dev](https://dev.mathsoftware.engineer): Software Development projects.
