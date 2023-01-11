@@ -642,7 +642,7 @@ Hence, the `drawNode` function is called $$21$$ times to render the whole
 tree but just $$15$$ of those are full rendering.
 
 **With memoization off is visually clear that nodes are being rendered on top of
-themselves**, so it's easy to stop that flaw (notice node $$(4, 1)$$ for
+themselves**, so it's easy to spot that flaw (notice node $$(4, 1)$$ for
 instance):
 
 ![Memoization Off](memoization-off.png)
