@@ -1,5 +1,5 @@
 // Copyright (c) 2022 Tobias Briones. All rights reserved.
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: BSD-3-Clause
 // This file is part of https://github.com/mathsoftware/engineer
 //
 // This file is also available at https://github.com/repsymo/2dp-repsymo-solver
