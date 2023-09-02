@@ -10,7 +10,7 @@ feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
 The result is a
-[web app that renders an MRM solution tree within 2D coordinates](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+[web app that renders an MRM solution tree within 2D coordinates](mrm-solution-tree---ep/app).
 
 ## Original MRM Problem
 
@@ -132,15 +132,17 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 #### Resources
 
-- [root-node.json](web/static/root-node.json): sample tree object to render.
-- [model.ts](web/src/model.ts): assumed data model.
-- [mrm-canvas.ts](web/src/mrm-canvas.ts): underlying module.
+- [root-node.json](mrm-solution-tree---ep/files/root-node.json): sample tree
+  object to render.
+- [model.ts](mrm-solution-tree---ep/src/model.ts): assumed data model.
+- [mrm-canvas.ts](mrm-solution-tree---ep/src/mrm-canvas.ts): underlying module.
 - [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
   containing the initial step-by-step development.
 
 ##### Other Resources
 
-- [triangle.py](triangle.py): generates the rectangle triangles figure.
+- [triangle.py](mrm-solution-tree---ep/files/triangle.py): generates the
+  rectangle triangles figure.
 
 ### Tree Model
 
@@ -398,7 +400,7 @@ const cp = {
 }
 ```
 
-#### Drawing a Node (`drawNode`)
+#### Drawing a Node
 
 This is the recursive function to populate the whole tree from the root node.
 **We take care of memoization to dynamically store the drawn nodes**. For
@@ -428,7 +430,7 @@ So, it takes three steps:
 The method `drawNodeLines` calls back to this method so initiates the recursion
 process. That one is left to the end as it's the harder.
 
-#### Node Circle and Content (`drawNodeCircle` and `drawNodeContent`)
+#### Node Circle and Content
 
 These are pretty straightforward.
 
@@ -474,7 +476,7 @@ canvas.render();
 
 ![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
 
-#### Line with Labels from Node-to-Node (`drawNodeLines`)
+#### Line with Labels from Node-to-Node
 
 First, we need some definitions to address this challenge:
 
@@ -613,7 +615,7 @@ By running now, we get the desired result:
 
 ![Solution Tree Canvas](solution-tree-canvas.png)
 
-The result is deployed to the [web directory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+The result is deployed to the [example project app](mrm-solution-tree---ep/app).
 
 ## Analysis
 

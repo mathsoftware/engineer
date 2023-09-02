@@ -18,7 +18,7 @@ module.exports = {
     main: './src/main.ts',
   },
   output: {
-    path: path.resolve(__dirname, '..', 'out'),
+    path: path.resolve(__dirname, '..', 'app'),
     publicPath: './'
   },
   plugins: plugins,
