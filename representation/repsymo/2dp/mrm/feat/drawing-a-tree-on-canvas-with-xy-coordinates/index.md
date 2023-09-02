@@ -400,7 +400,7 @@ const cp = {
 }
 ```
 
-#### Drawing a Node (`drawNode`)
+#### Drawing a Node
 
 This is the recursive function to populate the whole tree from the root node.
 **We take care of memoization to dynamically store the drawn nodes**. For
@@ -430,7 +430,7 @@ So, it takes three steps:
 The method `drawNodeLines` calls back to this method so initiates the recursion
 process. That one is left to the end as it's the harder.
 
-#### Node Circle and Content (`drawNodeCircle` and `drawNodeContent`)
+#### Node Circle and Content
 
 These are pretty straightforward.
 
@@ -476,7 +476,7 @@ canvas.render();
 
 ![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
 
-#### Line with Labels from Node-to-Node (`drawNodeLines`)
+#### Line with Labels from Node-to-Node
 
 First, we need some definitions to address this challenge:
 
