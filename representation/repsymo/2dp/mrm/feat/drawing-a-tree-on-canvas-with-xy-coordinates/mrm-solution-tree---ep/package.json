@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "description": "Drawing a Tree on Canvas with XY Coordinates (Web)",
+  "name": "mrm-solution-tree---ep",
+  "description": "Article Example Project that renders the tree in HTML5 Canvas with TypeScript",
   "version": "1.0.0",
   "license": "BSD-3-Clause",
   "author": "Tobias Briones",
