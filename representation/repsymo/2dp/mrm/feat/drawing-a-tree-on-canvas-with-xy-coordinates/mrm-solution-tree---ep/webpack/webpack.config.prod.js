@@ -12,7 +12,7 @@ const commonConfig = require('./webpack.config.common');
 
 const copyrightHeader =
 `Copyright (c) 2022 Tobias Briones. All rights reserved.
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: BSD-3-Clause
 This file is part of https://github.com/mathsoftware/engineer`;
 
 const mode = 'production';

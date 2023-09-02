@@ -2,7 +2,7 @@
   "name": "web",
   "description": "Drawing a Tree on Canvas with XY Coordinates (Web)",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "author": "Tobias Briones",
   "main": "main.ts",
   "private": true,
