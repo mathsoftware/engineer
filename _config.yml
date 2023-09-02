@@ -1,6 +1,5 @@
-theme: jekyll-theme-minimal
 permalink: /:basename
-url: https://mathsoftware.engineer
+url: https://blog.mathsoftware.engineer
 
 title: Math Software Engineer
 author: Tobias Briones
@@ -25,3 +24,6 @@ post_search: true
 
 twitter:
   card: summary_large_image
+
+exclude:
+  - Main.kt

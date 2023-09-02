@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "\/(.*)\/(\..*)$"
+  to = "/$1/-.$2"
+  status = 302
+  force = true
