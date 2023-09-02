@@ -1,0 +1,18 @@
+_site
+.sass-cache
+
+# Bypass the global .gitignore
+
+# Accept specific static files
+!**/static/*.png
+!**/static/*.jpg
+!**/static/*.mp4
+!**/static/*.pdf
+!**/static/*.psd
+
+# Accept specific static files in the "files" subdirectory
+!**/static/files/*.png
+!**/static/files/*.jpg
+!**/static/files/*.mp4
+!**/static/files/*.pdf
+!**/static/files/*.psd
