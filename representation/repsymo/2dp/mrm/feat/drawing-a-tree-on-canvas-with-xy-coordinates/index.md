@@ -132,7 +132,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 #### Resources
 
-- [root-node.json](mrm-solution-tree---ep/static/root-node.json): sample tree
+- [root-node.json](mrm-solution-tree---ep/files/root-node.json): sample tree
   object to render.
 - [model.ts](mrm-solution-tree---ep/src/model.ts): assumed data model.
 - [mrm-canvas.ts](mrm-solution-tree---ep/src/mrm-canvas.ts): underlying module.
@@ -141,7 +141,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 ##### Other Resources
 
-- [triangle.py](mrm-solution-tree---ep/static/triangle.py): generates the
+- [triangle.py](mrm-solution-tree---ep/files/triangle.py): generates the
   rectangle triangles figure.
 
 ### Tree Model
