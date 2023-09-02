@@ -10,7 +10,7 @@ feature implemented into the 2DP Repsymo Solver for the machine replacement
 model from the operations research field.
 
 The result is a
-[web app that renders an MRM solution tree within 2D coordinates](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+[web app that renders an MRM solution tree within 2D coordinates](mrm-solution-tree---ep/app).
 
 ## Original MRM Problem
 
@@ -615,7 +615,7 @@ By running now, we get the desired result:
 
 ![Solution Tree Canvas](solution-tree-canvas.png)
 
-The result is deployed to the [web directory](https://mathsoftware.engineer/drawing-a-tree-on-canvas-with-xy-coordinates/web).
+The result is deployed to the [example project app](mrm-solution-tree---ep/app).
 
 ## Analysis
 
