@@ -22,7 +22,7 @@ const plugins = [
   new MiniCssExtractPlugin({ filename: './css/[name].[contentHash].css' }),
   new CopyWebpackPlugin({
     patterns: [
-      { from: 'static' }
+      { from: 'files' }
     ]
   })
   // new OptimizeCSSAssetsPlugin({}) // it's not working on webpack 5
