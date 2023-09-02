@@ -141,7 +141,8 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 ##### Other Resources
 
-- [triangle.py](triangle.py): generates the rectangle triangles figure.
+- [triangle.py](mrm-solution-tree---ep/static/triangle.py): generates the
+  rectangle triangles figure.
 
 ### Tree Model
 
