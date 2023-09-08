@@ -3,10 +3,10 @@ permalink: drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep
 title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep"
 ---
 
-# mrm-solution-tree---ep
+# MRM Solution Tree | EP
 <ul>
   <li>
-    <a href="https://github.com/tobiasbriones/blog/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/.gitignore" target="_blank">
+    <a href="https://github.com/mathsoftware/engineer/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/.gitignore" target="_blank">
       .gitignore
     </a>
   </li>
@@ -52,7 +52,7 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep"
   </li>
 </ul>
 <div class="social open-gh-btn my-4">
-  <a class="btn btn-github" href="https://github.com/tobiasbriones/blog/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep" target="_blank">
+  <a class="btn btn-github" href="https://github.com/mathsoftware/engineer/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep" target="_blank">
     <i class="fab fa-github">
       
     </i>

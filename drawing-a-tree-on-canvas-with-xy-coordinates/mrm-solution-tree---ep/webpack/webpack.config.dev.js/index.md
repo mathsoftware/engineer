@@ -47,7 +47,7 @@ module.exports = merge(commonConfig, {
 
 ```
 <div class="social open-gh-btn my-4">
-  <a class="btn btn-github" href="https://github.com/tobiasbriones/blog/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/webpack/webpack.config.dev.js" target="_blank">
+  <a class="btn btn-github" href="https://github.com/mathsoftware/engineer/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/webpack/webpack.config.dev.js" target="_blank">
     <i class="fab fa-github">
       
     </i>

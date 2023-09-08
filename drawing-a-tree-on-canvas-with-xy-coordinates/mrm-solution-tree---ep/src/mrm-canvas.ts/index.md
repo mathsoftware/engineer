@@ -270,7 +270,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 ```
 <div class="social open-gh-btn my-4">
-  <a class="btn btn-github" href="https://github.com/tobiasbriones/blog/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src/mrm-canvas.ts" target="_blank">
+  <a class="btn btn-github" href="https://github.com/mathsoftware/engineer/tree/main/representation/repsymo/2dp/mrm/feat/drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src/mrm-canvas.ts" target="_blank">
     <i class="fab fa-github">
       
     </i>
