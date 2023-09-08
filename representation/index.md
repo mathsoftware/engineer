@@ -6,25 +6,6 @@ ogimage: ""
 ---
 
 
-<nav>
-  <a class="home" href="/">
-    <span class="material-symbols-rounded">
-      home
-    </span>
-    <span>
-      Engineer
-    </span>
-  </a>
-  <div class="article">
-    <a class="title" href="#">
-      Representation
-    </a>
-    <ul>
-      
-    </ul>
-  </div>
-</nav>
-
 <!-- Copyright (c) 2022 Tobias Briones. All rights reserved. -->
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- This file is part of https://github.com/mathsoftware/engineer -->
