@@ -1,0 +1,26 @@
+* {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  //color: rgba(0, 0, 0, 0.89);
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+}

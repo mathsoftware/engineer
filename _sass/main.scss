@@ -1,0 +1,161 @@
+@import "default";
+@import "header";
+@import "toc";
+@import "menu";
+@import "table";
+@import "social";
+
+:root {
+    --content-background-color: #fff;
+    --title-text-color: #212121;
+    --content-text-color: #424242;
+    --secondary-text-color: #616161;
+    --third-text-color: #757575;
+    --accent-color: #607d8b;
+    --hover-background-color: #f5f5f5;
+}
+
+:root {
+    --content-padding: 5%;
+    --nav-height: 4rem;
+}
+
+body {
+    background-color: var(--content-background-color);
+    color: var(--content-text-color);
+}
+
+section.main {
+    position: relative;
+    margin-bottom: 25vh;
+}
+
+article {
+    padding: var(--content-padding);
+}
+
+footer {
+    padding: var(--content-padding);
+    margin-bottom: 64px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    color: var(--title-text-color);
+}
+
+.footnotes p {
+    color: var(--secondary-text-color);
+}
+
+blockquote {
+    padding: 0 1rem;
+    border-left: 1px solid #e0e0e0;
+}
+
+blockquote p:not(:last-child) {
+    color: var(--third-text-color);
+}
+
+p img {
+    display: block;
+    max-width: 100%;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+pre {
+    background-color: #fafafa !important;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+code {
+    background-color: #fafafa;
+    border: 1px solid #E0E0E0;
+    border-radius: 0.25rem;
+    padding: 0 0.25rem;
+    color: inherit;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+    margin: 0;
+}
+
+pre code {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+div > div.highlight {
+    border: 1px solid #E0E0E0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+code > span {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+figcaption strong {
+    color: var(--title-text-color);
+}
+
+strong {
+    color: var(--content-text-color);
+}
+
+@media screen and (min-width: 720px) {
+    :root {
+        --content-padding: 4vw;
+    }
+
+    section.main {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (min-width: 960px) {
+    section.main {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    :root {
+        --content-padding: 2vw;
+    }
+
+    section.main {
+        width: 40%;
+        margin-top: 4rem;
+        z-index: 3;
+    }
+
+    article {
+        padding-top: 0.125rem;
+    }
+
+    footer {
+        width: 40%;
+        margin-bottom: 0;
+    }
+}
+
+
+@media screen and (min-width: 1920px) {
+    nav a {
+        padding: 0.5rem 2rem;
+    }
+}

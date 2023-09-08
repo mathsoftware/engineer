@@ -1,0 +1,44 @@
+footer > nav {
+  position: fixed;
+  width: 100%;
+  height: var(--nav-height);
+  left: 0;
+  bottom: 0;
+  background-color: var(--content-background-color);
+  border-top: 1px solid #e0e0e0;
+  z-index: 1;
+}
+
+.menu-item {
+  width: 20%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-item > .title {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--third-text-color);
+  margin-bottom: 0.25rem;
+}
+
+.menu-item > .icon > span {
+  display: block;
+  font-size: 1.5rem;
+  margin: auto;
+  color: var(--third-text-color);
+  text-align: center;
+}
+
+@media screen and (min-width: 1280px) {
+  footer > nav {
+    width: 30%;
+    left: 0;
+    border-top: none;
+  }
+
+  .menu-item {
+    width: 50%;
+    padding: 0.5rem 4%;
+  }
+}

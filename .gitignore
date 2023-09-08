@@ -1,6 +1,8 @@
 _site
 .sass-cache
 
+**/node_modules/*
+
 # Bypass the global .gitignore
 
 # Accept specific static files
