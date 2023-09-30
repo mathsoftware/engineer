@@ -35,14 +35,14 @@ header a:active {
 }
 
 #solutionsTreeParent {
-  width: 480px;
-  height: 720px;
+  width: 1200px;
+  height: 1400px;
   margin: 3% auto;
 }
 
 @media (min-width: 1360px) {
   #solutionsTreeParent {
-    width: 800px;
-    height: 1024px;
+    width: 1200px;
+    height: 1500px;
   }
 }

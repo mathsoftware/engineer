@@ -6,6 +6,7 @@
 // under a different license.
 
 import { TreeNode, newTreeNode } from './model';
+import {Screenshots} from "./sim";
 
 export const parentElId = 'solutionsTreeParent';
 
@@ -55,6 +56,7 @@ export class SolutionsTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
   public rootNode: TreeNode;
   private radiusPx: number;
+  screenshots: Screenshots;
 
   constructor() {
     super();
@@ -65,11 +67,13 @@ export class SolutionsTreeCanvas extends MrmCanvas {
   init(canvasEl) {
     super.init(canvasEl);
     this.axesCanvas.init(canvasEl);
+    this.screenshots = new Screenshots(canvasEl);
+
   }
 
   render() {
     super.render();
-    this.axesCanvas.render();
+    // this.axesCanvas.render();
   }
 
   protected update() {
@@ -81,6 +85,8 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const memoization = new Set<string>();
 
     this.drawNode(ctx, this.rootNode, memoization);
+    this.screenshots.saveLast();
+    this.screenshots.download();
   }
 
   // @ts-ignore
@@ -90,11 +96,16 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const hasNeverBeenDrawn = !memoization.has(point2dStr);
 
     if (hasNeverBeenDrawn) {
+      this.screenshots.save(`First Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
       this.drawNodeLines(ctx, node, memoization);
+    }
+    else {
+      this.screenshots.save(`Partial Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
     }
     this.drawNodeCircle(ctx, node);
     this.drawNodeContent(ctx, node);
     memoization.add(point2dStr);
+    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Done`);
   }
 
   // @ts-ignore
@@ -130,26 +141,26 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const drawUpRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
       const labelX = x + (triangleX * this.radiusPx / hypotenuse);
-      const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 8;
+      const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 16;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawDownRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
-      const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 4;
-      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
+      const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 8;
+      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
-      const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 4;
-      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
+      const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 8;
+      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawLabelTo = (next: TreeNode, label: string) => {
-      ctx.font = '12px Poppins';
+      ctx.font = '24px Poppins';
       ctx.textAlign = 'center';
       ctx.fillStyle = 'black';
 
@@ -166,14 +177,26 @@ export class SolutionsTreeCanvas extends MrmCanvas {
 
     if (node.k) {
       drawLineTo(node.k);
+      this.screenshots.save('Line K');
       drawLabelTo(node.k, 'K');
+      this.screenshots.save('Label K');
+
+      this.screenshots.save('Recursion to Next Node...');
+
       this.drawNode(ctx, node.k, memoization); // Recursive call
     }
     if (node.r) {
       drawLineTo(node.r);
+      this.screenshots.save('Line R');
       drawLabelTo(node.r, 'R');
+      this.screenshots.save('Label R');
+
+      this.screenshots.save('Recursion to Next Node...');
+
       this.drawNode(ctx, node.r, memoization); // Recursive call
     }
+    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Lines Done`);
+
   }
 
   private drawNodeCircle(ctx: CanvasRenderingContext2D, node: TreeNode) {
@@ -183,10 +206,12 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     ctx.fillStyle = 'white';
     ctx.fill();
     ctx.stroke();
+
+    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Circle`);
   }
 
   private drawNodeContent(ctx: CanvasRenderingContext2D, node: TreeNode) {
-    ctx.font = '24px Poppins';
+    ctx.font = '48px Poppins';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
     const txt = String(node.machineAge);
@@ -194,6 +219,8 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const txtHeight = txtMetrics.actualBoundingBoxAscent + txtMetrics.actualBoundingBoxDescent;
     const { x, y } = this.getNodeCP(node);
     ctx.fillText(txt, x, y + txtHeight / 2);
+    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Content: ${txt}`);
+
   }
 
   private getNodeCP(node: TreeNode) {
@@ -213,8 +240,8 @@ export class TreeAxesCanvas extends MrmCanvas {
   constructor() {
     super();
     this.padding = TreeAxesCanvas.AXIS_LABEL_SIZE_PX;
-    this.maxAbscissa = 5;
-    this.maxOrdinate = 8;
+    this.maxAbscissa = 6;
+    this.maxOrdinate = 7;
   }
 
   get cellSize() {
