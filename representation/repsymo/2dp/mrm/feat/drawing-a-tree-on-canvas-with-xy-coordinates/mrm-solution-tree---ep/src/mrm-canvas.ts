@@ -83,6 +83,8 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     // @ts-ignore
     const memoization = new Set<string>();
 
+    this.screenshots.save(`Drawing Root Node (${this.rootNode.decisionYear}, ${this.rootNode.machineAge})...`);
+
     this.drawNode(ctx, this.rootNode, memoization);
     this.screenshots.saveLast();
     this.screenshots.download();
@@ -95,16 +97,21 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const hasNeverBeenDrawn = !memoization.has(point2dStr);
 
     if (hasNeverBeenDrawn) {
-      this.screenshots.save(`First Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
+      // this.screenshots.save(`First Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
+
       this.drawNodeLines(ctx, node, memoization);
     }
     else {
-      this.screenshots.save(`Partial Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
+      // this.screenshots.save(`Partial Drawing of Node (${node.decisionYear}, ${node.machineAge})...`);
     }
     this.drawNodeCircle(ctx, node);
     this.drawNodeContent(ctx, node);
     memoization.add(point2dStr);
-    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Done`);
+    // this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Done`);
+
+    if (hasNeverBeenDrawn) {
+      this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge})`);
+    }
   }
 
   // @ts-ignore
@@ -176,25 +183,25 @@ export class SolutionsTreeCanvas extends MrmCanvas {
 
     if (node.k) {
       drawLineTo(node.k);
-      this.screenshots.save('Line K');
+      // this.screenshots.save('Line K');
       drawLabelTo(node.k, 'K');
-      this.screenshots.save('Label K');
+      // this.screenshots.save('Label K');
 
-      this.screenshots.save('Recursion to Next Node...');
+      // this.screenshots.save('Recursion to Next Node...');
 
       this.drawNode(ctx, node.k, memoization); // Recursive call
     }
     if (node.r) {
       drawLineTo(node.r);
-      this.screenshots.save('Line R');
+      // this.screenshots.save('Line R');
       drawLabelTo(node.r, 'R');
-      this.screenshots.save('Label R');
+      // this.screenshots.save('Label R');
 
-      this.screenshots.save('Recursion to Next Node...');
+      // this.screenshots.save('Recursion to Next Node...');
 
       this.drawNode(ctx, node.r, memoization); // Recursive call
     }
-    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Lines Done`);
+    // this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Lines Done`);
 
   }
 
@@ -206,7 +213,7 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     ctx.fill();
     ctx.stroke();
 
-    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Circle`);
+    // this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Circle`);
   }
 
   private drawNodeContent(ctx: CanvasRenderingContext2D, node: TreeNode) {
@@ -218,7 +225,7 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     const txtHeight = txtMetrics.actualBoundingBoxAscent + txtMetrics.actualBoundingBoxDescent;
     const { x, y } = this.getNodeCP(node);
     ctx.fillText(txt, x, y + txtHeight / 2);
-    this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Content: ${txt}`);
+    // this.screenshots.save(`Node (${node.decisionYear}, ${node.machineAge}) Content: ${txt}`);
 
   }
 
