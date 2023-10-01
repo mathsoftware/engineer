@@ -16,6 +16,7 @@ export interface Shot {
 
 function getShot(canvasEl: HTMLCanvasElement, caption: Caption): Shot {
     return {
+        // screenshot: '',
         screenshot: canvasEl.toDataURL('image/png'),
         caption
     };

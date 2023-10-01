@@ -68,12 +68,11 @@ export class SolutionsTreeCanvas extends MrmCanvas {
     super.init(canvasEl);
     this.axesCanvas.init(canvasEl);
     this.screenshots = new Screenshots(canvasEl);
-
   }
 
   render() {
     super.render();
-    // this.axesCanvas.render();
+    this.axesCanvas.render();
   }
 
   protected update() {
@@ -249,7 +248,7 @@ export class TreeAxesCanvas extends MrmCanvas {
   }
 
   protected update() {
-    this.cellSizePx = this.width / 6;
+    this.cellSizePx = this.width / (this.maxAbscissa + 1);
   }
 
   protected draw(ctx) {
