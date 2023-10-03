@@ -41,7 +41,7 @@ header a:active {
 
 @media (min-width: 1360px) {
   #solutionTreeParent {
-    width: 800px;
-    height: 1024px;
+    width: 600px;
+    height: 800px;
   }
 }

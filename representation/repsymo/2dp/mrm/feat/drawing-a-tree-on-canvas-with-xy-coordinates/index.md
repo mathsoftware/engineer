@@ -109,9 +109,9 @@ Some styles can be added.
 
 ```css
 #solutionTreeParent {
-    width: 100%;
-    height: 720px;
-    overflow-x: auto;
+    width: 600px;
+    height: 800px;
+    margin: 3% auto;
 }
 ```
 
