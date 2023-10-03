@@ -7,21 +7,18 @@ import './main.css';
 import { newTreeNode, TreeNode } from './model';
 import { SolutionTreeCanvas } from './mrm-canvas';
 
-const main = Main();
-main.init().then(console.log);
+main().then(console.log);
 
-function Main() {
-  let tree = newTreeNode();
-  return {
-    async init() {
-      tree = await loadTree();
-      window.onresize = () => render(tree);
-      render(tree);
-    }
-  };
+async function main() {
+  const path = 'root-node.json';
+  const tree = await fetchTree(path);
+
+  window.onresize = () => render(tree);
+  render(tree);
+  return 'Initialized';
 }
 
-function render(tree) {
+function render(tree: TreeNode) {
   const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
   const canvas = new SolutionTreeCanvas();
   canvas.rootNode = tree;
@@ -30,17 +27,28 @@ function render(tree) {
   canvas.render();
 }
 
-async function loadTree(): Promise<TreeNode> {
-  try {
-    const res = await fetch(getTreeUrl());
-    return await res.json();
-  }
-  catch (e) {
-    console.log(e);
-  }
-  return newTreeNode();
+function fetchTree(path: string): Promise<TreeNode> {
+  return fetch(path)
+    .then(res => res.ok ? res : Promise.reject(res.statusText))
+    .then(res => res.json())
+    .catch(reason => {
+      showError({ reason, msg: 'Failed to fetch tree' });
+      console.error(reason);
+      return newTreeNode();
+    });
 }
 
-function getTreeUrl() {
-  return `root-node.json`
+interface Error {
+  reason: any;
+  msg: string;
+}
+
+function showError(error: Error) {
+  document.getElementById('error').innerText = errorMsg(error);
+  return error;
+}
+
+function errorMsg(error: Error): string {
+  const { reason, msg } = error;
+  return `${ msg }: ${ reason }`;
 }
