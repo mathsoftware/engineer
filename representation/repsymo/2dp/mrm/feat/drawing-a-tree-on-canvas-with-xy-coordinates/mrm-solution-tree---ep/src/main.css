@@ -16,21 +16,9 @@ a {
   text-align: center;
 }
 
-header a:link {
-  color: rgba(0, 0, 0, 0.89);
+h2 a:hover,
+h2 a:active {
   text-decoration: none;
-}
-
-header a:visited {
-  color: rgba(0, 0, 0, 0.89);
-}
-
-header a:hover {
-  color: #607d8b;
-}
-
-header a:active {
-  text-decoration: underline;
 }
 
 #solutionTreeParent {
@@ -56,4 +44,23 @@ header a:active {
     width: 600px;
     height: 800px;
   }
+}
+
+/* Default Styles */
+
+a:link {
+  color: #1565C0;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1565C0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }
