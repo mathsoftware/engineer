@@ -5,7 +5,7 @@
 // This file is also available at https://github.com/repsymo/2dp-repsymo-solver
 // under a different license.
 
-import { TreeNode, newTreeNode } from './model';
+import { TreeNode, newTreeNode } from './mrm';
 
 export const parentElId = 'solutionTreeParent';
 

@@ -4,7 +4,7 @@
 
 import './index.html';
 import './main.css';
-import { newTreeNode, TreeNode } from './model';
+import { newTreeNode, TreeNode } from './mrm';
 import { SolutionTreeCanvas } from './mrm-canvas';
 
 main().then(console.log);

@@ -135,7 +135,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 - [root-node.json](mrm-solution-tree---ep/files/root-node.json): sample tree
   object to render.
-- [model.ts](mrm-solution-tree---ep/src/model.ts): assumed data model.
+- [mrm.ts](mrm-solution-tree---ep/src/mrm.ts): assumed data model.
 - [mrm-canvas.ts](mrm-solution-tree---ep/src/mrm-canvas.ts): underlying module.
 - [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
   containing the initial step-by-step development.
@@ -166,7 +166,7 @@ so can have two children: `k` and `r`.
 Thus, we have a binary tree to draw on an XY-plane.
 
 This data structure is an external given model, so it should be added, say,
-into a `model.ts` module.
+into a `mrm.ts` module.
 
 ### Canvas Design
 
