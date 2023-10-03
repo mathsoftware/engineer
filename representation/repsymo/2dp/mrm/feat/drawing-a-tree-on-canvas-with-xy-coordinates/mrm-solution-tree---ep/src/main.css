@@ -27,6 +27,12 @@ h2 a:active {
   margin: 3% auto;
 }
 
+#error {
+  margin: 1rem auto;
+  text-align: center;
+  color: #c62828;
+}
+
 .tree-container {
   width: 100%;
   overflow: auto;
@@ -47,6 +53,7 @@ h2 a:active {
   #solutionTreeParent {
     width: 600px;
     height: 800px;
+    margin: 1% auto;
   }
 }
 
