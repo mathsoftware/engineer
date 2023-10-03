@@ -34,9 +34,21 @@ header a:active {
 }
 
 #solutionTreeParent {
-  width: 480px;
-  height: 720px;
+  width: 400px;
+  height: 540px;
   margin: 3% auto;
+}
+
+.tree-container {
+  width: 100%;
+  overflow: auto;
+}
+
+@media (min-width: 600px) {
+  #solutionTreeParent {
+    width: 480px;
+    height: 720px;
+  }
 }
 
 @media (min-width: 1360px) {
