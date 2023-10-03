@@ -40,6 +40,10 @@ h2 a:active {
 }
 
 @media (min-width: 1360px) {
+  body {
+    padding: 4rem 5%;
+  }
+
   #solutionTreeParent {
     width: 600px;
     height: 800px;
@@ -47,6 +51,11 @@ h2 a:active {
 }
 
 /* Default Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html {
   font-size: 16px;
