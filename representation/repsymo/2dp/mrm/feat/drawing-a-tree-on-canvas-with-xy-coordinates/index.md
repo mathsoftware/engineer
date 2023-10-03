@@ -450,7 +450,7 @@ ctx.stroke();
 To draw the content inside the node:
 
 ```ts
-ctx.font = '48px Poppins';
+ctx.font = '24px Poppins';
 ctx.textAlign = 'center';
 ctx.fillStyle = 'black';
 const txt = String(node.machineAge);
@@ -531,21 +531,21 @@ the decision year always increases**.
 const drawUpRightLabel = (next: TreeNode, label: string) => {
   const { triangleX, triangleY, hypotenuse } = triangle(next);
   const labelX = x + (triangleX * this.radiusPx / hypotenuse);
-  const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 16;
+  const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 8;
   ctx.fillText(label, labelX, labelY);
 };
 
 const drawDownRightLabel = (next: TreeNode, label: string) => {
   const { triangleX, triangleY, hypotenuse } = triangle(next);
-  const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 8;
-  const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
+  const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 4;
+  const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
   ctx.fillText(label, labelX, labelY);
 };
 
 const drawRightLabel = (next: TreeNode, label: string) => {
   const { triangleX, triangleY, hypotenuse } = triangle(next);
-  const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 8;
-  const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
+  const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 4;
+  const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
   ctx.fillText(label, labelX, labelY);
 };
 ```
@@ -554,7 +554,7 @@ Then just call one of these functions to draw the appropriate line:
 
 ```ts
 const drawLabelTo = (next: TreeNode, label: string) => {
-  ctx.font = '24px Poppins';
+  ctx.font = '12px Poppins';
   ctx.textAlign = 'center';
   ctx.fillStyle = 'black';
 
