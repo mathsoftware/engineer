@@ -88,10 +88,11 @@ correct, in other words, the model **matches**[^4] the representation.
 
 [^4]: Notice FP pattern matching
 
-## Development
+## EP: MRM Solution Tree
 
-Two elements are required to draw on the canvas, namely, the 2D-Axis and the
-tree that grows horizontally.
+Two elements are required to draw on the canvas: the 2D axis and the tree that
+grows horizontally. These two elements are what the solution tree application to
+render consists of.
 
 ### Getting Started
 
