@@ -163,7 +163,7 @@ It follows that the independent variable $$x$$ is going to be the `decisionYear`
 attribute and the dependent variable $$y$$ the `machineAge`. The tree is binary
 so can have two children: `k` and `r`.
 
-Thus, we have a binary tree to draw on an $$XY-plane$$.
+Thus, we have a binary tree to draw on an XY-plane.
 
 This data structure is an external given model, so it should be added, say,
 into a `model.ts` module.
@@ -237,8 +237,7 @@ ctx.stroke();
 
 To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
 value from $$0$$$ until a maximum set value. There is a variable `cellSizePx`
-that tells the width and height of each cell in the $$XY-plane$$$ (first
-quadrant).
+that tells the width and height of each cell in the XY-plane (first quadrant).
 
 ```ts
 ctx.textAlign = 'center';
@@ -722,7 +721,7 @@ recursion as a mathematician but think about it when engineering.
 This case study for the feature `Solution Tree | MRM | 2DP Repsymo Solver`
 is taken to obtain insight and then employ the machine replacement model and
 the HTML5 Canvas API to address the modeling and design of this feature into a
-typescript module providing rendering for $$XY-axis$$ and the solution tree.
+typescript module providing rendering for XY-axis and the solution tree.
 
 Basic trigonometry is needed to render some elements, like similar triangles
 which are useful to position the node labels.
