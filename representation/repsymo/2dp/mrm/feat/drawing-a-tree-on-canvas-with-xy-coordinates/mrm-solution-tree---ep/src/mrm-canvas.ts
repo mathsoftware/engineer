@@ -51,7 +51,7 @@ export abstract class MrmCanvas {
 
 // You should delete the @ts-ignore comments //
 
-export class SolutionsTreeCanvas extends MrmCanvas {
+export class SolutionTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
   public rootNode: TreeNode;
   private radiusPx: number;

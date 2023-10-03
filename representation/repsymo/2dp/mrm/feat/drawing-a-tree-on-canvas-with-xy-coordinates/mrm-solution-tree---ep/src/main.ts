@@ -5,7 +5,7 @@
 import './index.html';
 import './main.css';
 import { newTreeNode, TreeNode } from './model';
-import { SolutionsTreeCanvas } from './mrm-canvas';
+import { SolutionTreeCanvas } from './mrm-canvas';
 
 const main = Main();
 main.init().then(console.log);
@@ -23,7 +23,7 @@ function Main() {
 
 function render(tree) {
   const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
-  const canvas = new SolutionsTreeCanvas();
+  const canvas = new SolutionTreeCanvas();
   canvas.rootNode = tree;
 
   canvas.init(canvasEl);

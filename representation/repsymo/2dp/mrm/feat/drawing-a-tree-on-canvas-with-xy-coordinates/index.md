@@ -336,7 +336,7 @@ The tree canvas is quite more complicated. The class consists of the following
 structure:
 
 ```ts
-class SolutionsTreeCanvas extends MrmCanvas {
+class SolutionTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
   public rootNode: TreeNode;
   private radiusPx: number;
@@ -468,8 +468,8 @@ decision year:
 
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
-const canvas = new SolutionsTreeCanvas();
-canvas.rootNode = this.solver.getSolutionsTree(); // Use your tree here
+const canvas = new SolutionTreeCanvas();
+canvas.rootNode = this.solver.getSolutionTree(); // Use your tree here
 
 canvas.init(canvasEl);
 canvas.render();
@@ -603,8 +603,8 @@ By importing the developed module, the API is then consumed as follows:
 
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
-const canvas = new SolutionsTreeCanvas();
-const tree = this.solver.getSolutionsTree(); // Replace with your tree
+const canvas = new SolutionTreeCanvas();
+const tree = this.solver.getSolutionTree(); // Replace with your tree
 
 canvas.rootNode = tree;
 canvas.init(canvasEl);
