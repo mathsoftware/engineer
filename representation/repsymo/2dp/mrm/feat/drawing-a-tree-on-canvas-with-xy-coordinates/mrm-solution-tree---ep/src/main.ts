@@ -22,7 +22,7 @@ function Main() {
 }
 
 function render(tree) {
-  const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+  const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
   const canvas = new SolutionsTreeCanvas();
   canvas.rootNode = tree;
 

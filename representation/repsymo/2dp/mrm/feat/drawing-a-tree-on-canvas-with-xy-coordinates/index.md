@@ -99,18 +99,19 @@ Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
 ```html
-<div id="solutionsTreeParent">
-  <canvas id="solutionsTree"></canvas>
+
+<div id="solutionTreeParent">
+  <canvas id="solutionTree"></canvas>
 </div>
 ```
 
 Some styles can be added.
 
 ```css
-#solutionsTreeParent {
-  width: 100%;
-  height: 720px;
-  overflow-x: auto;
+#solutionTreeParent {
+    width: 100%;
+    height: 720px;
+    overflow-x: auto;
 }
 ```
 
@@ -320,7 +321,7 @@ class TreeAxesCanvas extends MrmCanvas {
 Then
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const axesCanvas = new TreeAxesCanvas();
 
 axesCanvas.init(canvasEl);
@@ -466,7 +467,7 @@ By running at this stage we obtain the first node drawn representing the initial
 decision year:
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionsTreeCanvas();
 canvas.rootNode = this.solver.getSolutionsTree(); // Use your tree here
 
@@ -601,7 +602,7 @@ scroll, etc. Performance should be considered here.
 By importing the developed module, the API is then consumed as follows:
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionsTreeCanvas();
 const tree = this.solver.getSolutionsTree(); // Replace with your tree
 

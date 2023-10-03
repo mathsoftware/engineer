@@ -7,7 +7,7 @@
 
 import { TreeNode, newTreeNode } from './model';
 
-export const parentElId = 'solutionsTreeParent';
+export const parentElId = 'solutionTreeParent';
 
 export abstract class MrmCanvas {
   public padding: number;

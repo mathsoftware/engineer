@@ -33,14 +33,14 @@ header a:active {
   text-decoration: underline;
 }
 
-#solutionsTreeParent {
+#solutionTreeParent {
   width: 480px;
   height: 720px;
   margin: 3% auto;
 }
 
 @media (min-width: 1360px) {
-  #solutionsTreeParent {
+  #solutionTreeParent {
     width: 800px;
     height: 1024px;
   }
