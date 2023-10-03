@@ -282,7 +282,7 @@ class TreeAxesCanvas extends MrmCanvas {
   }
 
   protected update() {
-    this.cellSizePx = this.width / 6;
+    this.cellSizePx = this.width / (this.maxAbscissa + 1);
   }
 
   protected draw(ctx) {
