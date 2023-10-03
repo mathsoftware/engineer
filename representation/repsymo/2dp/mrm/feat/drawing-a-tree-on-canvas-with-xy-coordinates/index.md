@@ -236,7 +236,7 @@ ctx.stroke();
 ```
 
 To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
-value from $$0$$$ until a maximum set value. There is a variable `cellSizePx`
+value from $$0$$ until a maximum set value. There is a variable `cellSizePx`
 that tells the width and height of each cell in the XY-plane (first quadrant).
 
 ```ts
