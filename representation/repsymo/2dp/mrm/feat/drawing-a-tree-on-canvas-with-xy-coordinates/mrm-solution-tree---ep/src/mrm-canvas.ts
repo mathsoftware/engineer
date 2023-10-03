@@ -130,26 +130,26 @@ export class SolutionTreeCanvas extends MrmCanvas {
     const drawUpRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
       const labelX = x + (triangleX * this.radiusPx / hypotenuse);
-      const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 8;
+      const labelY = y - (triangleY * this.radiusPx / hypotenuse) - 16;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawDownRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
-      const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 4;
-      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
+      const labelX = x + (triangleX * this.radiusPx / hypotenuse) - 8;
+      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawRightLabel = (next: TreeNode, label: string) => {
       const { triangleX, triangleY, hypotenuse } = triangle(next);
-      const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 4;
-      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 16;
+      const labelX = x + (triangleX * this.radiusPx / hypotenuse) + 8;
+      const labelY = y + (triangleY * this.radiusPx / hypotenuse) + 32;
       ctx.fillText(label, labelX, labelY);
     };
 
     const drawLabelTo = (next: TreeNode, label: string) => {
-      ctx.font = '12px Poppins';
+      ctx.font = '24px Poppins';
       ctx.textAlign = 'center';
       ctx.fillStyle = 'black';
 
@@ -186,7 +186,7 @@ export class SolutionTreeCanvas extends MrmCanvas {
   }
 
   private drawNodeContent(ctx: CanvasRenderingContext2D, node: TreeNode) {
-    ctx.font = '24px Poppins';
+    ctx.font = '48px Poppins';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
     const txt = String(node.machineAge);
@@ -222,12 +222,13 @@ export class TreeAxesCanvas extends MrmCanvas {
   }
 
   protected update() {
-    this.cellSizePx = this.width / 6;
+    this.cellSizePx = this.width / (this.maxAbscissa + 1);
   }
 
   protected draw(ctx) {
     ctx.font = '12px Poppins';
     ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'black';
 
     ctx.moveTo(this.padding, 0);
     ctx.lineTo(this.padding, this.height - this.padding);
