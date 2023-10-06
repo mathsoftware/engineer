@@ -1,0 +1,136 @@
+
+pre {
+  background-color: #fafafa !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+code {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  color: inherit;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+  margin: 0;
+}
+
+pre code {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+div > div.highlight {
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.header ~ div > div.highlight {
+  border-radius: 0;
+  margin-bottom: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.header ~ .abstract {
+  padding: 1rem;
+  text-align: center;
+  font-weight: lighter;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.header ~ figcaption {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+code > span {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+figure > .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+figure > .header > .caption {
+  padding: 0.5rem 1rem;
+  flex: 1;
+}
+
+figure > .header > .menu {
+  display: flex;
+  align-self: stretch;
+  gap: 0;
+}
+
+figure > .header > .menu > button {
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-top-right-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+}
+
+figure > .header > .menu > button > .material-symbols-rounded {
+  font-size: 1.25rem;
+  color: var(--content-text-color);
+}
+
+figure > .header > .menu > button:hover {
+  background-color: var(--hover-background-color);
+}
+
+figure > .header > .menu > button > .tooltip {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 0.5rem 0.75rem;
+  transition: opacity 0.4s;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 0.0625rem solid #f0f0f0;
+  background-color: var(--content-background-color);
+  pointer-events: none;
+}
+
+figure > .headerless {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+figure > .headerless > .caption {
+  height: 1.5rem;
+  box-sizing: content-box;
+}
+
+figure > .headerless > .menu {
+  z-index: 1;
+}
+
+figure > .headerless > .menu > button {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.headerless ~ div > div.highlight {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top: 1px solid #e0e0e0;
+}

@@ -1,0 +1,47 @@
+
+footer {
+  padding: var(--content-padding);
+  margin-bottom: 64px;
+}
+
+footer h5 {
+  font-size: 1rem;
+}
+
+footer {
+  font-size: 0.875rem;
+}
+
+footer > .nav ul {
+  list-style-type: none;
+}
+
+footer > .nav a {
+  font-weight: bold;
+  color: #37474f;
+}
+
+footer .legal .notice,
+footer .legal .notice p,
+footer .legal .notice a {
+  font-size: 0.625rem;
+}
+
+@media screen and (min-width: 720px) {
+  footer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  footer {
+    position: absolute;
+    width: 25%;
+    top: 100%;
+    left: 75%;
+    padding: var(--content-padding);
+    margin-bottom: 0;
+  }
+}
