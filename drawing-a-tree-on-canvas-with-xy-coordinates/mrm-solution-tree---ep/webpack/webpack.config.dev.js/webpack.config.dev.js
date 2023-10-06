@@ -7,7 +7,7 @@ module.exports = merge(commonConfig, {
     filename: './js/[name].js'
   },
   devServer: {
-    static: './out',
+    static: './app',
     compress: true,
     hot: true,
     devMiddleware: {

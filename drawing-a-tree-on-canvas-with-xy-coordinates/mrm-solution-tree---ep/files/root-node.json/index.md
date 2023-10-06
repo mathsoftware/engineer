@@ -135,8 +135,8 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/file
     <i class="fab fa-github">
       
     </i>
-    <strong>
+    <span>
       Open in GitHub
-    </strong>
+    </span>
   </a>
 </div>

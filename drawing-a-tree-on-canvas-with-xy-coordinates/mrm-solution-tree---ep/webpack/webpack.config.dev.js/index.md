@@ -14,7 +14,7 @@ module.exports = merge(commonConfig, {
     filename: './js/[name].js'
   },
   devServer: {
-    static: './out',
+    static: './app',
     compress: true,
     hot: true,
     devMiddleware: {
@@ -51,8 +51,8 @@ module.exports = merge(commonConfig, {
     <i class="fab fa-github">
       
     </i>
-    <strong>
+    <span>
       Open in GitHub
-    </strong>
+    </span>
   </a>
 </div>

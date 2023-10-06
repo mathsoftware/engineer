@@ -21,13 +21,13 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src"
     </a>
   </li>
   <li>
-    <a href="model.ts">
-      model.ts
+    <a href="mrm-canvas.ts">
+      mrm-canvas.ts
     </a>
   </li>
   <li>
-    <a href="mrm-canvas.ts">
-      mrm-canvas.ts
+    <a href="mrm.ts">
+      mrm.ts
     </a>
   </li>
 </ul>
@@ -36,8 +36,8 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src"
     <i class="fab fa-github">
       
     </i>
-    <strong>
+    <span>
       Open in GitHub
-    </strong>
+    </span>
   </a>
 </div>

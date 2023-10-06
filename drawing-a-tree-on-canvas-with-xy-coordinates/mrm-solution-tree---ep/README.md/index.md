@@ -44,8 +44,8 @@ generated at directory `out`.
     <i class="fab fa-github">
       
     </i>
-    <strong>
+    <span>
       Open in GitHub
-    </strong>
+    </span>
   </a>
 </div>

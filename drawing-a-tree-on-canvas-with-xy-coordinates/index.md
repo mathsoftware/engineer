@@ -96,10 +96,11 @@ correct, in other words, the model **matches**[^4] the representation.
 
 [^4]: Notice FP pattern matching
 
-## Development
+## EP: MRM Solution Tree
 
-Two elements are required to draw on the canvas, namely, the 2D-Axis and the
-tree that grows horizontally.
+Two elements are required to draw on the canvas: the 2D axis and the tree that
+grows horizontally. These two elements are what the solution tree application to
+render consists of.
 
 ### Getting Started
 
@@ -107,18 +108,18 @@ Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
 ```html
-<div id="solutionsTreeParent">
-  <canvas id="solutionsTree"></canvas>
+<div id="solutionTreeParent">
+  <canvas id="solutionTree"></canvas>
 </div>
 ```
 
 Some styles can be added.
 
 ```css
-#solutionsTreeParent {
-  width: 100%;
-  height: 720px;
-  overflow-x: auto;
+#solutionTreeParent {
+    width: 600px;
+    height: 800px;
+    margin: 3% auto;
 }
 ```
 
@@ -142,7 +143,7 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 - [root-node.json](mrm-solution-tree---ep/files/root-node.json): sample tree
   object to render.
-- [model.ts](mrm-solution-tree---ep/src/model.ts): assumed data model.
+- [mrm.ts](mrm-solution-tree---ep/src/mrm.ts): assumed data model.
 - [mrm-canvas.ts](mrm-solution-tree---ep/src/mrm-canvas.ts): underlying module.
 - [gh-pr](https://github.com/repsymo/2dp-repsymo-solver/pull/21): pull request
   containing the initial step-by-step development.
@@ -170,10 +171,10 @@ It follows that the independent variable $$x$$ is going to be the `decisionYear`
 attribute and the dependent variable $$y$$ the `machineAge`. The tree is binary
 so can have two children: `k` and `r`.
 
-Thus, we have a binary tree to draw on an $$XY-plane$$.
+Thus, we have a binary tree to draw on an XY-plane.
 
 This data structure is an external given model, so it should be added, say,
-into a `model.ts` module.
+into a `mrm.ts` module.
 
 ### Canvas Design
 
@@ -243,9 +244,8 @@ ctx.stroke();
 ```
 
 To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
-value from $$0$$$ until a maximum set value. There is a variable `cellSizePx`
-that tells the width and height of each cell in the $$XY-plane$$$ (first
-quadrant).
+value from $$0$$ until a maximum set value. There is a variable `cellSizePx`
+that tells the width and height of each cell in the XY-plane (first quadrant).
 
 ```ts
 ctx.textAlign = 'center';
@@ -289,12 +289,13 @@ class TreeAxesCanvas extends MrmCanvas {
   }
 
   protected update() {
-    this.cellSizePx = this.width / 6;
+    this.cellSizePx = this.width / (this.maxAbscissa + 1);
   }
 
   protected draw(ctx) {
     ctx.font = '12px Poppins';
     ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'black';
 
     ctx.moveTo(this.padding, 0);
     ctx.lineTo(this.padding, this.height - this.padding);
@@ -328,7 +329,7 @@ class TreeAxesCanvas extends MrmCanvas {
 Then
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const axesCanvas = new TreeAxesCanvas();
 
 axesCanvas.init(canvasEl);
@@ -343,7 +344,7 @@ The tree canvas is quite more complicated. The class consists of the following
 structure:
 
 ```ts
-class SolutionsTreeCanvas extends MrmCanvas {
+class SolutionTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
   public rootNode: TreeNode;
   private radiusPx: number;
@@ -474,9 +475,9 @@ By running at this stage we obtain the first node drawn representing the initial
 decision year:
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
-const canvas = new SolutionsTreeCanvas();
-canvas.rootNode = this.solver.getSolutionsTree(); // Use your tree here
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
+const canvas = new SolutionTreeCanvas();
+canvas.rootNode = this.solver.getSolutionTree(); // Use your tree here
 
 canvas.init(canvasEl);
 canvas.render();
@@ -609,9 +610,9 @@ scroll, etc. Performance should be considered here.
 By importing the developed module, the API is then consumed as follows:
 
 ```ts
-const canvasEl = document.getElementById('solutionsTree') as HTMLCanvasElement;
-const canvas = new SolutionsTreeCanvas();
-const tree = this.solver.getSolutionsTree(); // Replace with your tree
+const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
+const canvas = new SolutionTreeCanvas();
+const tree = this.solver.getSolutionTree(); // Replace with your tree
 
 canvas.rootNode = tree;
 canvas.init(canvasEl);
@@ -650,7 +651,7 @@ Hence, the `drawNode` function is called $$21$$ times to render the whole
 tree but just $$15$$ of those are full rendering.
 
 **With memoization off is visually clear that nodes are being rendered on top of
-themselves**, so it's easy to stop that flaw (notice node $$(4, 1)$$ for
+themselves**, so it's easy to spot that flaw (notice node $$(4, 1)$$ for
 instance):
 
 ![Memoization Off](memoization-off.png)
@@ -728,7 +729,7 @@ recursion as a mathematician but think about it when engineering.
 This case study for the feature `Solution Tree | MRM | 2DP Repsymo Solver`
 is taken to obtain insight and then employ the machine replacement model and
 the HTML5 Canvas API to address the modeling and design of this feature into a
-typescript module providing rendering for $$XY-axis$$ and the solution tree.
+typescript module providing rendering for XY-axis and the solution tree.
 
 Basic trigonometry is needed to render some elements, like similar triangles
 which are useful to position the node labels.
@@ -739,13 +740,15 @@ further insight on how this feature is evolving in the Repsymo Solver
 complements the understanding of this topic.
 
 
+
+
 <div class="my-4">
   <div class="subdir-btn my-4">
     <a class="btn" href="mrm-solution-tree---ep">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDQwIDIwNDAiIHdpZHRoPSIyMDQwIiBoZWlnaHQ9IjIwNDAiPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6ICNmNWY1ZjUgfSAKCQkuc2hwMSB7IGZpbGw6ICMwMjc3YmQgfSAKCQkuc2hwMiB7IGZpbGw6ICNlZjZjMDAgfSAKCQkuc2hwMyB7IGZpbGw6ICMwMDY5NWMgfSAKCTwvc3R5bGU+Cgk8cGF0aCBpZD0iQmFja2dyb3VuZCIgY2xhc3M9InNocDAiIGQ9Ik0wIDBMMjA0MCAwTDIwNDAgMjA0MEwwIDIwNDBMMCAwWiIgLz4KCTxnIGlkPSJFIj4KCQk8cGF0aCBpZD0iRSBCYXIiIGNsYXNzPSJzaHAxIiBkPSJNMCAwTDIyOS41IDBMMjI5LjUgMTE0Ny41TDAgMTE0Ny41TDAgMFoiIC8+CgkJPHBhdGggaWQ9IkUgVG9wIiBjbGFzcz0ic2hwMSIgZD0iTTIwNCAwTDkxOCAwTDkxOCAyMjkuNUwyMDQgMjI5LjVMMjA0IDBaIiAvPgoJCTxwYXRoIGlkPSJFIE1pZGRsZSIgY2xhc3M9InNocDEiIGQ9Ik0yMDQgNDU5TDkxOCA0NTlMOTE4IDY4OC41TDIwNCA2ODguNUwyMDQgNDU5WiIgLz4KCQk8cGF0aCBpZD0iRSBCb3R0b20iIGNsYXNzPSJzaHAxIiBkPSJNMjA0IDkxOEw5MTggOTE4TDkxOCAxMTQ3LjVMMjA0IDExNDcuNUwyMDQgOTE4WiIgLz4KCTwvZz4KCTxnIGlkPSJQIj4KCQk8cGF0aCBpZD0iUCBCYXIiIGNsYXNzPSJzaHAyIiBkPSJNOTE4IDBMMTE0Ny41IDBMMTE0Ny41IDExNDcuNUw5MTggMTE0Ny41TDkxOCAwWiIgLz4KCQk8cGF0aCBpZD0iUCBSaWdodCIgY2xhc3M9InNocDIiIGQ9Ik0xNjA2LjUgMEwxODM2IDBMMTgzNiA2ODguNUwxNjA2LjUgNjg4LjVMMTYwNi41IDBaIiAvPgoJCTxwYXRoIGlkPSJQIFRvcCIgY2xhc3M9InNocDIiIGQ9Ik0xMDMyLjc1IDBMMTcyMS4yNSAwTDE3MjEuMjUgMjI5LjVMMTAzMi43NSAyMjkuNUwxMDMyLjc1IDBaIiAvPgoJCTxwYXRoIGlkPSJQIEJvdHRvbSIgY2xhc3M9InNocDIiIGQ9Ik0xMDMyLjc1IDQ1OUwxNzIxLjI1IDQ1OUwxNzIxLjI1IDY4OC41TDEwMzIuNzUgNjg4LjVMMTAzMi43NSA0NTlaIiAvPgoJPC9nPgoJPHBhdGggaWQ9IlJ1biIgY2xhc3M9InNocDMiIGQ9Ik0yMDQwIDE1MzBMMTE0OCAyMDQwTDExNDggMTAyMEwyMDQwIDE1MzBaIiAvPgo8L3N2Zz4=" alt="Example Project" />
-      <strong>
+      <span>
         MRM Solution Tree
-      </strong>
+      </span>
     </a>
   </div>
 </div>

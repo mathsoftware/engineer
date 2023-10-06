@@ -12,9 +12,9 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src/
 // This file is also available at https://github.com/repsymo/2dp-repsymo-solver
 // under a different license.
 
-import { TreeNode, newTreeNode } from './model';
+import { TreeNode, newTreeNode } from './mrm';
 
-export const parentElId = 'solutionsTreeParent';
+export const parentElId = 'solutionTreeParent';
 
 export abstract class MrmCanvas {
   public padding: number;
@@ -58,7 +58,7 @@ export abstract class MrmCanvas {
 
 // You should delete the @ts-ignore comments //
 
-export class SolutionsTreeCanvas extends MrmCanvas {
+export class SolutionTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
   public rootNode: TreeNode;
   private radiusPx: number;
@@ -229,12 +229,13 @@ export class TreeAxesCanvas extends MrmCanvas {
   }
 
   protected update() {
-    this.cellSizePx = this.width / 6;
+    this.cellSizePx = this.width / (this.maxAbscissa + 1);
   }
 
   protected draw(ctx) {
     ctx.font = '12px Poppins';
     ctx.fillStyle = 'black';
+    ctx.strokeStyle = 'black';
 
     ctx.moveTo(this.padding, 0);
     ctx.lineTo(this.padding, this.height - this.padding);
@@ -274,8 +275,8 @@ function getHypotenuse(triangleX: number, triangleY: number) {
     <i class="fab fa-github">
       
     </i>
-    <strong>
+    <span>
       Open in GitHub
-    </strong>
+    </span>
   </a>
 </div>

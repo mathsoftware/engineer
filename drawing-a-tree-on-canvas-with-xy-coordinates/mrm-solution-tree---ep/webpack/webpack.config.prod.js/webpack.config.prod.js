@@ -20,11 +20,6 @@ const plugins = [
   new webpack.BannerPlugin(copyrightHeader),
   new FixStyleOnlyEntriesPlugin(),
   new MiniCssExtractPlugin({ filename: './css/[name].[contentHash].css' }),
-  new CopyWebpackPlugin({
-    patterns: [
-      { from: 'files' }
-    ]
-  })
   // new OptimizeCSSAssetsPlugin({}) // it's not working on webpack 5
 ];
 const cssRules = {
