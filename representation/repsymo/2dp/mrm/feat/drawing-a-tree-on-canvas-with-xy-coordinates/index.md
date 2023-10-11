@@ -36,7 +36,7 @@ textbook references. It's also advisable to review the
     [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
-![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+![](solution-tree-with-html-and-css---ep-mrm.png)
 
 Chances are obviously limited and the connecting lines from a node to
 its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
@@ -99,6 +99,8 @@ render consists of.
 Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
+`Canvas Parent | index.html`
+
 ```html
 <div id="solutionTreeParent">
   <canvas id="solutionTree"></canvas>
@@ -106,6 +108,8 @@ draw.
 ```
 
 Some styles can be added.
+
+`General Structure Styles | main.css`
 
 ```css
 #solutionTreeParent {
@@ -121,9 +125,11 @@ Create the module `mrm-canvas` that is going to be developed. It's going to
 contain the following specification that is going to be detailed along with this
 article:
 
-![Module MRM Canvas \| UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
+![](module-mrm-canvas---uml-class-diagram.svg)
 
 This function is going to help with some calculations:
+
+`Application of the Pythagorean Theorem | Triangle Hypotenuse | mrm-canvas.ts`
 
 ```ts
 function getHypotenuse(triangleX: number, triangleY: number) {
@@ -149,6 +155,8 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 
 The solution tree for the machine replacement model consists of the following
 data type:
+
+`MRM Node | mrm.ts`
 
 ```ts
 interface TreeNode {
@@ -177,6 +185,8 @@ its size according to its parent element. The render method runs a standard game
 loop operation when the model is updated and then the drawing is performed with
 the new model values computed. That means the tree can be re-rendered in
 different states if the `render` method is called.
+
+`Abstract Canvas Design | mrm-canvas.ts`
 
 ```ts
 abstract class MrmCanvas {
@@ -224,6 +234,8 @@ abstract class MrmCanvas {
 
 First, the axes lines are easily drawn:
 
+`Drawing the Plane Axes | met draw | class TreeAxesCanvas | mrm-canvas.ts`
+
 ```ts
 ctx.font = '12px Poppins';
 ctx.fillStyle = 'black';
@@ -239,6 +251,8 @@ To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
 value from $$0$$ until a maximum set value. There is a variable `cellSizePx`
 that tells the width and height of each cell in the XY-plane (first quadrant).
 
+`Abscissa Labels | met drawXLabels | class TreeAxesCanvas | mrm-canvas.ts`
+
 ```ts
 ctx.textAlign = 'center';
 
@@ -251,6 +265,8 @@ for (let i = 0; i <= this.maxAbscissa; i++) {
 For drawing the $$Y$$ axis labels some minor considerations are taken into
 account to draw it properly.
 
+`Ordinate Labels | met drawYLabels | class TreeAxesCanvas | mrm-canvas.ts`
+
 ```ts
 ctx.textAlign = 'start';
 
@@ -261,6 +277,8 @@ for (let i = 1; i <= this.maxOrdinate; i++) {
 ```
 
 These results are compiled into the `TreeAxesCanvas` class:
+
+`Implementation of the Axes Canvas | mrm-canvas.ts`
 
 ```ts
 class TreeAxesCanvas extends MrmCanvas {
@@ -320,6 +338,8 @@ class TreeAxesCanvas extends MrmCanvas {
 
 Then
 
+`Setting up the Axes Canvas`
+
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const axesCanvas = new TreeAxesCanvas();
@@ -328,12 +348,14 @@ axesCanvas.init(canvasEl);
 axesCanvas.render();
 ```
 
-![Axes Canvas](axes-canvas.png)
+![](axes-canvas.png)
 
 ### Drawing the Tree
 
 The tree canvas is quite more complicated. The class consists of the following
 structure:
+
+`Solution Tree Canvas Structure | mrm-canvas.ts`
 
 ```ts
 class SolutionTreeCanvas extends MrmCanvas {
@@ -394,6 +416,8 @@ the children recursively.
 Regarding the helper method `getNodeCP` we have the following code to get the
 center point of the given `node`:
 
+`Node Center Point | met getNodeCP | class SolutionTreeCanvas | mrm-canvas.ts`
+
 ```ts
 const cp = {
   x: (node.decisionYear * this.axesCanvas.cellSize) + TreeAxesCanvas.AXIS_LABEL_SIZE_PX,
@@ -408,6 +432,8 @@ This is the recursive function to populate the whole tree from the root node.
 correctness effects, we always render the node circle and its content but the
 node lines and labels (which are visually significant if rendered more than
 once) are only rendered once.
+
+`Node Drawing | met drawNode | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 const point2d = { x: node.decisionYear, y: node.machineAge };
@@ -437,6 +463,9 @@ These are pretty straightforward.
 
 To draw the circle:
 
+`Node Circle Drawing
+| met drawNodeCircle | class SolutionTreeCanvas | mrm-canvas.ts`
+
 ```ts
 const { x, y } = this.getNodeCP(node);
 ctx.beginPath();
@@ -447,6 +476,9 @@ ctx.stroke();
 ```
 
 To draw the content inside the node:
+
+`Node Content Drawing
+| met drawNodeContent | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 ctx.font = '24px Poppins';
@@ -466,6 +498,8 @@ with `ctx.textAlign = 'center'`.
 By running at this stage we obtain the first node drawn representing the initial
 decision year:
 
+`Setting up the Solution Tree Canvas`
+
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionTreeCanvas();
@@ -475,11 +509,14 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
-![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
+![](drawing-node-circle-and-content.png)
 
 #### Line with Labels from Node-to-Node
 
 First, we need some definitions to address this challenge:
+
+`Definitions for Node Lines
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 const padding = TreeAxesCanvas.AXIS_LABEL_SIZE_PX;
@@ -493,6 +530,9 @@ tell us if the next node is just to the right of the current node
 (iff both nodes' ordinates are the same and equal to $$1$$ for this problem).
 
 Drawing the line is straightforward:
+
+`Drawing Line from Current Node to the Next
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 const nextX = (next.decisionYear * this.axesCanvas.cellSize) + padding;
@@ -508,7 +548,10 @@ useful for **computing the directions for the outgoing lines from the current
 node to the next one**. We simply use **similar triangles** to obtain the
 requesting points.
 
-![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
+![](triangle-for-tangent-point-at-node--to--node-line.svg)
+
+`Triangle Defined by Two Nodes
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 const triangle = (next: TreeNode) => {
@@ -525,6 +568,9 @@ const triangle = (next: TreeNode) => {
 With that information we can draw the lines according to the corresponding
 quadrant: up, straight or right, down. **The next node is always to the right as
 the decision year always increases**.
+
+`Drawing Labels at Different Directions
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 const drawUpRightLabel = (next: TreeNode, label: string) => {
@@ -551,6 +597,9 @@ const drawRightLabel = (next: TreeNode, label: string) => {
 
 Then just call one of these functions to draw the appropriate line:
 
+`Matching the Label Direction
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
+
 ```ts
 const drawLabelTo = (next: TreeNode, label: string) => {
   ctx.font = '12px Poppins';
@@ -571,6 +620,9 @@ const drawLabelTo = (next: TreeNode, label: string) => {
 
 Finally, to implement the method `drawNodeLines` we draw the line to the
 "Keep" node and to the "Replace" node by **making use of recursion**:
+
+`Recursive Drawing as per Model Decision | Drawing Line and Moving Forward
+| met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
 
 ```ts
 if (node.k) {
@@ -601,6 +653,8 @@ scroll, etc. Performance should be considered here.
 
 By importing the developed module, the API is then consumed as follows:
 
+`Drawing Result | main.ts`
+
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionTreeCanvas();
@@ -614,7 +668,7 @@ canvas.render();
 
 By running now, we get the desired result:
 
-![Solution Tree Canvas](solution-tree-canvas.png)
+![](solution-tree-canvas.png)
 
 The result is deployed to the [example project app](mrm-solution-tree---ep/app).
 
@@ -646,11 +700,11 @@ tree but just $$15$$ of those are full rendering.
 themselves**, so it's easy to spot that flaw (notice node $$(4, 1)$$ for
 instance):
 
-![Memoization Off](memoization-off.png)
+![](memoization-off.png)
 
 The problem, if we use full memoization, is as said before, correctness:
 
-![Full Memoization](full-memoization.png)
+![](full-memoization.png)
 
 The optimization can be addressed by computing a *more accurate model* and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
@@ -665,7 +719,7 @@ follow the recursion process.
 Recall that, as said above, the last nodes from the bottom are *partially
 drawn* more times later.
 
-![Drawing Order](drawing-order.png)
+![](drawing-order.png)
 
 ## More Recursion
 
@@ -679,7 +733,7 @@ directed graph structure that looks similar to the tree that was developed.
 **Result Chains:** Replace the first year and then, two ways can be taken for
 the next year.
 
-![Result Chains](result-chains.png)
+![](result-chains.png)
 
 Since the solution tree is the **set of all possible solutions** to the problem,
 and particularly, the **model solution belongs to the tree** which, with more
@@ -687,7 +741,7 @@ clever work can be traced onto the same solution tree:
 
 **Traced Solution Tree:** The model solution can be drawn into the tree.
 
-![Traced Solution Tree](traced-solution-tree.png)
+![](traced-solution-tree.png)
 
 Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
