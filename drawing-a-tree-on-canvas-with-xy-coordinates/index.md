@@ -44,7 +44,10 @@ textbook references. It's also advisable to review the
     [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
-![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+<figure>
+    <img src="solution-tree-with-html-and-css---ep-mrm.png" alt="Solution Tree with HTML and CSS | EP Mrm" />
+    <figcaption>Solution Tree with HTML and CSS | EP Mrm</figcaption>
+</figure>
 
 Chances are obviously limited and the connecting lines from a node to
 its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
@@ -107,14 +110,83 @@ render consists of.
 Create into your HTML a `div` containing the `canvas` in which we are going to
 draw.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        index.html
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/index.html" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="&lt;div id=&quot;solutionTreeParent&quot;&gt;
+  &lt;canvas id=&quot;solutionTree&quot;&gt;&lt;&#x2F;canvas&gt;
+&lt;&#x2F;div&gt;
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```html
 <div id="solutionTreeParent">
   <canvas id="solutionTree"></canvas>
 </div>
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Canvas Parent</figcaption>
+</figure>
+
 Some styles can be added.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        main.css
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/main.css" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="#solutionTreeParent {
+    width: 600px;
+    height: 800px;
+    margin: 3% auto;
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```css
 #solutionTreeParent {
     width: 600px;
@@ -123,21 +195,71 @@ Some styles can be added.
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>General Structure Styles</figcaption>
+</figure>
+
 Now everything will be programmatically developed.
 
 Create the module `mrm-canvas` that is going to be developed. It's going to
 contain the following specification that is going to be detailed along with this
 article:
 
-![Module MRM Canvas \| UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
+<figure>
+    <img src="module-mrm-canvas---uml-class-diagram.svg" alt="Module MRM Canvas | UML Class Diagram" />
+    <figcaption>Module MRM Canvas | UML Class Diagram</figcaption>
+</figure>
 
 This function is going to help with some calculations:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        mrm-canvas.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="function getHypotenuse(triangleX: number, triangleY: number) {
+  return Math.sqrt(Math.pow(triangleX, 2) + Math.pow(triangleY, 2));
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 function getHypotenuse(triangleX: number, triangleY: number) {
   return Math.sqrt(Math.pow(triangleX, 2) + Math.pow(triangleY, 2));
 }
 ```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+<div class="abstract">Application of the Pythagorean Theorem</div>
+
+<figcaption>Triangle Hypotenuse</figcaption>
+</figure>
 
 #### Resources
 
@@ -158,6 +280,38 @@ function getHypotenuse(triangleX: number, triangleY: number) {
 The solution tree for the machine replacement model consists of the following
 data type:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        mrm.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="interface TreeNode {
+  machineAge: number;
+  decisionYear: number;
+  k?: TreeNode;
+  r?: TreeNode;
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 interface TreeNode {
   machineAge: number;
@@ -166,6 +320,15 @@ interface TreeNode {
   r?: TreeNode;
 }
 ```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>MRM Node</figcaption>
+</figure>
 
 It follows that the independent variable $$x$$ is going to be the `decisionYear`
 attribute and the dependent variable $$y$$ the `machineAge`. The tree is binary
@@ -186,6 +349,71 @@ loop operation when the model is updated and then the drawing is performed with
 the new model values computed. That means the tree can be re-rendered in
 different states if the `render` method is called.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        mrm-canvas.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="abstract class MrmCanvas {
+  public padding: number;
+  private canvasEl: HTMLCanvasElement;
+  private ctx: CanvasRenderingContext2D;
+
+  protected constructor() {
+    this.padding = 0;
+  }
+
+  get width() {
+    return this.canvasEl.width;
+  }
+
+  get height() {
+    return this.canvasEl.height;
+  }
+
+  init(canvasEl: HTMLCanvasElement) {
+    this.canvasEl = canvasEl;
+    this.ctx = this.canvasEl.getContext(&#x27;2d&#x27;);
+    this.updateCanvasSize();
+    this.update();
+  }
+
+  render() {
+    this.update();
+    this.draw(this.ctx);
+  }
+
+  private updateCanvasSize() {
+    const parentEl = document.getElementById(parentElId);
+    this.canvasEl.width = parentEl.offsetWidth - this.padding;
+    this.canvasEl.height = parentEl.offsetHeight - this.padding;
+  }
+
+  protected abstract update();
+
+  protected abstract draw(ctx: CanvasRenderingContext2D);
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 abstract class MrmCanvas {
   public padding: number;
@@ -228,10 +456,53 @@ abstract class MrmCanvas {
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Abstract Canvas Design</figcaption>
+</figure>
+
 ### Drawing the Axes
 
 First, the axes lines are easily drawn:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met draw | class TreeAxesCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="ctx.font = &#x27;12px Poppins&#x27;;
+ctx.fillStyle = &#x27;black&#x27;;
+
+ctx.moveTo(this.padding, 0);
+ctx.lineTo(this.padding, this.height - this.padding);
+ctx.lineTo(this.width, this.height - this.padding);
+ctx.lineWidth = 1;
+ctx.stroke();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 ctx.font = '12px Poppins';
 ctx.fillStyle = 'black';
@@ -243,10 +514,51 @@ ctx.lineWidth = 1;
 ctx.stroke();
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Drawing the Plane Axes</figcaption>
+</figure>
+
 To draw the $$X$$ axis labels, set the text-align center and draw the abscissa
 value from $$0$$ until a maximum set value. There is a variable `cellSizePx`
 that tells the width and height of each cell in the XY-plane (first quadrant).
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawXLabels | class TreeAxesCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="ctx.textAlign = &#x27;center&#x27;;
+
+for (let i = 0; i &lt;= this.maxAbscissa; i++) {
+  const x = (i * this.cellSizePx) + this.padding;
+  ctx.fillText(String(i), x, this.height);
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 ctx.textAlign = 'center';
 
@@ -256,9 +568,50 @@ for (let i = 0; i <= this.maxAbscissa; i++) {
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Abscissa Labels</figcaption>
+</figure>
+
 For drawing the $$Y$$ axis labels some minor considerations are taken into
 account to draw it properly.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawYLabels | class TreeAxesCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="ctx.textAlign = &#x27;start&#x27;;
+
+for (let i = 1; i &lt;= this.maxOrdinate; i++) {
+  const y = this.height - (i * this.cellSizePx) - this.padding;
+  ctx.fillText(String(i), 0, y);
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 ctx.textAlign = 'start';
 
@@ -268,8 +621,96 @@ for (let i = 1; i <= this.maxOrdinate; i++) {
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Ordinate Labels</figcaption>
+</figure>
+
 These results are compiled into the `TreeAxesCanvas` class:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        mrm-canvas.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="class TreeAxesCanvas extends MrmCanvas {
+  public static readonly AXIS_LABEL_SIZE_PX = 24;
+  public maxAbscissa: number;
+  public maxOrdinate: number;
+  private cellSizePx: number;
+
+  constructor() {
+    super();
+    this.padding = TreeAxesCanvas.AXIS_LABEL_SIZE_PX;
+    this.maxAbscissa = 5;
+    this.maxOrdinate = 8;
+  }
+
+  get cellSize() {
+    return this.cellSizePx;
+  }
+
+  protected update() {
+    this.cellSizePx = this.width &#x2F; (this.maxAbscissa + 1);
+  }
+
+  protected draw(ctx) {
+    ctx.font = &#x27;12px Poppins&#x27;;
+    ctx.fillStyle = &#x27;black&#x27;;
+    ctx.strokeStyle = &#x27;black&#x27;;
+
+    ctx.moveTo(this.padding, 0);
+    ctx.lineTo(this.padding, this.height - this.padding);
+    ctx.lineTo(this.width, this.height - this.padding);
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    this.drawXLabels(ctx);
+    this.drawYLabels(ctx);
+  }
+
+  private drawXLabels(ctx) {
+    ctx.textAlign = &#x27;center&#x27;;
+
+    for (let i = 0; i &lt;= this.maxAbscissa; i++) {
+      const x = (i * this.cellSizePx) + this.padding;
+      ctx.fillText(String(i), x, this.height);
+    }
+  }
+
+  private drawYLabels(ctx) {
+    ctx.textAlign = &#x27;start&#x27;;
+
+    for (let i = 1; i &lt;= this.maxOrdinate; i++) {
+      const y = this.height - (i * this.cellSizePx) - this.padding;
+      ctx.fillText(String(i), 0, y);
+    }
+  }
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 class TreeAxesCanvas extends MrmCanvas {
   public static readonly AXIS_LABEL_SIZE_PX = 24;
@@ -326,8 +767,44 @@ class TreeAxesCanvas extends MrmCanvas {
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Implementation of the Axes Canvas</figcaption>
+</figure>
+
 Then
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="const canvasEl = document.getElementById(&#x27;solutionTree&#x27;) as HTMLCanvasElement;
+const axesCanvas = new TreeAxesCanvas();
+
+axesCanvas.init(canvasEl);
+axesCanvas.render();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const axesCanvas = new TreeAxesCanvas();
@@ -336,13 +813,92 @@ axesCanvas.init(canvasEl);
 axesCanvas.render();
 ```
 
-![Axes Canvas](axes-canvas.png)
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Setting up the Axes Canvas</figcaption>
+</figure>
+
+<figure>
+    <img src="axes-canvas.png" alt="Axes Canvas" />
+    <figcaption>Axes Canvas</figcaption>
+</figure>
 
 ### Drawing the Tree
 
 The tree canvas is quite more complicated. The class consists of the following
 structure:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        mrm-canvas.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="class SolutionTreeCanvas extends MrmCanvas {
+  private readonly axesCanvas: TreeAxesCanvas;
+  public rootNode: TreeNode;
+  private radiusPx: number;
+
+  constructor() {
+    super();
+    this.axesCanvas = new TreeAxesCanvas();
+    this.rootNode = newTreeNode();
+  }
+
+  init(canvasEl) {
+    super.init(canvasEl);
+    this.axesCanvas.init(canvasEl);
+  }
+
+  render() {
+    super.render();
+    this.axesCanvas.render();
+  }
+
+  protected update() {
+    this.radiusPx = this.axesCanvas.cellSize &#x2F; 4;
+  }
+
+  protected draw(ctx) {
+    const memoization = new Set&lt;string&gt;();
+
+    this.drawNode(ctx, this.rootNode, memoization);
+  }
+
+  private drawNode(ctx: CanvasRenderingContext2D, node: TreeNode, memoization: Set&lt;string&gt;) {&#x2F;* ... *&#x2F;}
+
+  private drawNodeLines(ctx: CanvasRenderingContext2D, node: TreeNode, memoization: Set&lt;string&gt;) {&#x2F;* ... *&#x2F;}
+
+  private drawNodeCircle(ctx: CanvasRenderingContext2D, node: TreeNode) {&#x2F;* ... *&#x2F;}
+
+  private drawNodeContent(ctx: CanvasRenderingContext2D, node: TreeNode) {&#x2F;* ... *&#x2F;}
+
+  private getNodeCP(node: TreeNode) {&#x2F;* ... *&#x2F;}
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 class SolutionTreeCanvas extends MrmCanvas {
   private readonly axesCanvas: TreeAxesCanvas;
@@ -387,6 +943,15 @@ class SolutionTreeCanvas extends MrmCanvas {
 }
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Solution Tree Canvas Structure</figcaption>
+</figure>
+
 Notice we have:
 
 - **An axes canvas:** To draw the axes.
@@ -402,12 +967,51 @@ the children recursively.
 Regarding the helper method `getNodeCP` we have the following code to get the
 center point of the given `node`:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met getNodeCP | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const cp = {
+  x: (node.decisionYear * this.axesCanvas.cellSize) + TreeAxesCanvas.AXIS_LABEL_SIZE_PX,
+  y: this.height - (node.machineAge * this.axesCanvas.cellSize) - TreeAxesCanvas.AXIS_LABEL_SIZE_PX
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const cp = {
   x: (node.decisionYear * this.axesCanvas.cellSize) + TreeAxesCanvas.AXIS_LABEL_SIZE_PX,
   y: this.height - (node.machineAge * this.axesCanvas.cellSize) - TreeAxesCanvas.AXIS_LABEL_SIZE_PX
 }
 ```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Node Center Point</figcaption>
+</figure>
 
 #### Drawing a Node
 
@@ -417,6 +1021,42 @@ correctness effects, we always render the node circle and its content but the
 node lines and labels (which are visually significant if rendered more than
 once) are only rendered once.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNode | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const point2d = { x: node.decisionYear, y: node.machineAge };
+const point2dStr = JSON.stringify(point2d);
+const hasNeverBeenDrawn = !memoization.has(point2dStr);
+
+if (hasNeverBeenDrawn) {
+  this.drawNodeLines(ctx, node, memoization);
+}
+this.drawNodeCircle(ctx, node);
+this.drawNodeContent(ctx, node);
+memoization.add(point2dStr);
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const point2d = { x: node.decisionYear, y: node.machineAge };
 const point2dStr = JSON.stringify(point2d);
@@ -429,6 +1069,15 @@ this.drawNodeCircle(ctx, node);
 this.drawNodeContent(ctx, node);
 memoization.add(point2dStr);
 ```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Node Drawing</figcaption>
+</figure>
 
 So, it takes three steps:
 
@@ -445,6 +1094,38 @@ These are pretty straightforward.
 
 To draw the circle:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeCircle | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const { x, y } = this.getNodeCP(node);
+ctx.beginPath();
+ctx.arc(x, y, this.radiusPx, 0, 2 * Math.PI);
+ctx.fillStyle = &#x27;white&#x27;;
+ctx.fill();
+ctx.stroke();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const { x, y } = this.getNodeCP(node);
 ctx.beginPath();
@@ -454,8 +1135,51 @@ ctx.fill();
 ctx.stroke();
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Node Circle Drawing</figcaption>
+</figure>
+
 To draw the content inside the node:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeContent | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="ctx.font = &#x27;24px Poppins&#x27;;
+ctx.textAlign = &#x27;center&#x27;;
+ctx.fillStyle = &#x27;black&#x27;;
+const txt = String(node.machineAge);
+const txtMetrics = ctx.measureText(txt);
+const txtHeight = txtMetrics.actualBoundingBoxAscent + txtMetrics.actualBoundingBoxDescent;
+const { x, y } = this.getNodeCP(node);
+ctx.fillText(txt, x, y + txtHeight &#x2F; 2);
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 ctx.font = '24px Poppins';
 ctx.textAlign = 'center';
@@ -467,6 +1191,15 @@ const { x, y } = this.getNodeCP(node);
 ctx.fillText(txt, x, y + txtHeight / 2);
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Node Content Drawing</figcaption>
+</figure>
+
 Notice in the call to `measureText`, we use an advanced Canvas API to get the
 text height and be able to center it vertically. It is horizontally centered
 with `ctx.textAlign = 'center'`.
@@ -474,6 +1207,34 @@ with `ctx.textAlign = 'center'`.
 By running at this stage we obtain the first node drawn representing the initial
 decision year:
 
+
+<figure>
+<div class="header user-select-none headerless">
+    <div class="caption">
+        
+    </div>
+
+    <div class="menu">
+        
+
+        <button type="button" data-code="const canvasEl = document.getElementById(&#x27;solutionTree&#x27;) as HTMLCanvasElement;
+const canvas = new SolutionTreeCanvas();
+canvas.rootNode = this.solver.getSolutionTree(); &#x2F;&#x2F; Use your tree here
+
+canvas.init(canvasEl);
+canvas.render();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionTreeCanvas();
@@ -483,12 +1244,54 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
-![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Setting up the Solution Tree Canvas</figcaption>
+</figure>
+
+<figure>
+    <img src="drawing-node-circle-and-content.png" alt="Drawing Node Circle and Content" />
+    <figcaption>Drawing Node Circle and Content</figcaption>
+</figure>
 
 #### Line with Labels from Node-to-Node
 
 First, we need some definitions to address this challenge:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const padding = TreeAxesCanvas.AXIS_LABEL_SIZE_PX;
+const { x, y } = this.getNodeCP(node);
+const isNodeNext = (next: TreeNode) =&gt; node.machineAge === 1 &amp;&amp; next.machineAge === 1;
+const isNodeBelow = (next: TreeNode) =&gt; node.machineAge &lt; next.machineAge;
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const padding = TreeAxesCanvas.AXIS_LABEL_SIZE_PX;
 const { x, y } = this.getNodeCP(node);
@@ -496,12 +1299,53 @@ const isNodeNext = (next: TreeNode) => node.machineAge === 1 && next.machineAge 
 const isNodeBelow = (next: TreeNode) => node.machineAge < next.machineAge;
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Definitions for Node Lines</figcaption>
+</figure>
+
 The $$(x, y)$$ coordinates are the center of the node (Center Point). The arrows
 tell us if the next node is just to the right of the current node
 (iff both nodes' ordinates are the same and equal to $$1$$ for this problem).
 
 Drawing the line is straightforward:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const nextX = (next.decisionYear * this.axesCanvas.cellSize) + padding;
+const nextY = this.height - (next.machineAge * this.axesCanvas.cellSize) - padding;
+ctx.beginPath();
+ctx.moveTo(x, y);
+ctx.lineTo(nextX, nextY);
+ctx.stroke();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const nextX = (next.decisionYear * this.axesCanvas.cellSize) + padding;
 const nextY = this.height - (next.machineAge * this.axesCanvas.cellSize) - padding;
@@ -511,13 +1355,60 @@ ctx.lineTo(nextX, nextY);
 ctx.stroke();
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Drawing Line from Current Node to the Next</figcaption>
+</figure>
+
 **The rectangle triangle defined by the two-node points** is going to be
 useful for **computing the directions for the outgoing lines from the current
 node to the next one**. We simply use **similar triangles** to obtain the
 requesting points.
 
-![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
+<figure>
+    <img src="triangle-for-tangent-point-at-node--to--node-line.svg" alt="Triangle for Tangent Point at Node-to-Node Line" />
+    <figcaption>Triangle for Tangent Point at Node-to-Node Line</figcaption>
+</figure>
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const triangle = (next: TreeNode) =&gt; {
+  const nextCP = this.getNodeCP(next);
+  const nextX = nextCP.x;
+  const nextY = nextCP.y;
+  const triangleX = nextX - x;
+  const triangleY = Math.abs(nextY - y);
+  const hypotenuse = getHypotenuse(triangleX, triangleY);
+  return { triangleX, triangleY, hypotenuse };
+};
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const triangle = (next: TreeNode) => {
   const nextCP = this.getNodeCP(next);
@@ -530,10 +1421,65 @@ const triangle = (next: TreeNode) => {
 };
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Triangle Defined by Two Nodes</figcaption>
+</figure>
+
 With that information we can draw the lines according to the corresponding
 quadrant: up, straight or right, down. **The next node is always to the right as
 the decision year always increases**.
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const drawUpRightLabel = (next: TreeNode, label: string) =&gt; {
+  const { triangleX, triangleY, hypotenuse } = triangle(next);
+  const labelX = x + (triangleX * this.radiusPx &#x2F; hypotenuse);
+  const labelY = y - (triangleY * this.radiusPx &#x2F; hypotenuse) - 8;
+  ctx.fillText(label, labelX, labelY);
+};
+
+const drawDownRightLabel = (next: TreeNode, label: string) =&gt; {
+  const { triangleX, triangleY, hypotenuse } = triangle(next);
+  const labelX = x + (triangleX * this.radiusPx &#x2F; hypotenuse) - 4;
+  const labelY = y + (triangleY * this.radiusPx &#x2F; hypotenuse) + 16;
+  ctx.fillText(label, labelX, labelY);
+};
+
+const drawRightLabel = (next: TreeNode, label: string) =&gt; {
+  const { triangleX, triangleY, hypotenuse } = triangle(next);
+  const labelX = x + (triangleX * this.radiusPx &#x2F; hypotenuse) + 4;
+  const labelY = y + (triangleY * this.radiusPx &#x2F; hypotenuse) + 16;
+  ctx.fillText(label, labelX, labelY);
+};
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const drawUpRightLabel = (next: TreeNode, label: string) => {
   const { triangleX, triangleY, hypotenuse } = triangle(next);
@@ -557,8 +1503,58 @@ const drawRightLabel = (next: TreeNode, label: string) => {
 };
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Drawing Labels at Different Directions</figcaption>
+</figure>
+
 Then just call one of these functions to draw the appropriate line:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const drawLabelTo = (next: TreeNode, label: string) =&gt; {
+  ctx.font = &#x27;12px Poppins&#x27;;
+  ctx.textAlign = &#x27;center&#x27;;
+  ctx.fillStyle = &#x27;black&#x27;;
+
+  if (isNodeBelow(next)) {
+    drawUpRightLabel(next, label);
+  }
+  else if (isNodeNext(next)) {
+    drawRightLabel(next, label);
+  }
+  else {
+    drawDownRightLabel(next, label);
+  }
+};
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const drawLabelTo = (next: TreeNode, label: string) => {
   ctx.font = '12px Poppins';
@@ -577,9 +1573,54 @@ const drawLabelTo = (next: TreeNode, label: string) => {
 };
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Matching the Label Direction</figcaption>
+</figure>
+
 Finally, to implement the method `drawNodeLines` we draw the line to the
 "Keep" node and to the "Replace" node by **making use of recursion**:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        met drawNodeLines | class SolutionTreeCanvas
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/mrm-canvas.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="if (node.k) {
+  drawLineTo(node.k);
+  drawLabelTo(node.k, &#x27;K&#x27;);
+  this.drawNode(ctx, node.k, memoization); &#x2F;&#x2F; Recursive call
+}
+if (node.r) {
+  drawLineTo(node.r);
+  drawLabelTo(node.r, &#x27;R&#x27;);
+  this.drawNode(ctx, node.r, memoization); &#x2F;&#x2F; Recursive call
+}
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 if (node.k) {
   drawLineTo(node.k);
@@ -592,6 +1633,15 @@ if (node.r) {
   this.drawNode(ctx, node.r, memoization); // Recursive call
 }
 ```
+
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+<div class="abstract">Recursive Drawing as per Model Decision</div>
+
+<figcaption>Drawing Line and Moving Forward</figcaption>
+</figure>
 
 The initial method `drawNode` is called recursively (recall that `drawNode` was
 the caller and `drawNodeLines` is the callee) and the `memoization`
@@ -609,6 +1659,40 @@ scroll, etc. Performance should be considered here.
 
 By importing the developed module, the API is then consumed as follows:
 
+
+<figure>
+<div class="header user-select-none ">
+    <div class="caption">
+        main.ts
+    </div>
+
+    <div class="menu">
+        <button type="button" data-path="mrm-solution-tree---ep/src/main.ts" onclick="onOpenCodeSnippetLink(this)">
+    <span class="material-symbols-rounded">
+    open_in_new
+    </span>
+</button>
+
+        <button type="button" data-code="const canvasEl = document.getElementById(&#x27;solutionTree&#x27;) as HTMLCanvasElement;
+const canvas = new SolutionTreeCanvas();
+const tree = this.solver.getSolutionTree(); &#x2F;&#x2F; Replace with your tree
+
+canvas.rootNode = tree;
+canvas.init(canvasEl);
+
+canvas.render();
+" onclick="onCopyCodeSnippet(this)">
+            <span class="material-symbols-rounded">
+            content_copy
+            </span>
+
+            <div class="tooltip">
+                Copied
+            </div>
+        </button>
+    </div>
+</div>
+{% capture markdownContent %}
 ```ts
 const canvasEl = document.getElementById('solutionTree') as HTMLCanvasElement;
 const canvas = new SolutionTreeCanvas();
@@ -620,9 +1704,21 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
+{% endcapture %}
+
+{{ markdownContent | markdownify }}
+
+
+
+<figcaption>Drawing Result</figcaption>
+</figure>
+
 By running now, we get the desired result:
 
-![Solution Tree Canvas](solution-tree-canvas.png)
+<figure>
+    <img src="solution-tree-canvas.png" alt="Solution Tree Canvas" />
+    <figcaption>Solution Tree Canvas</figcaption>
+</figure>
 
 The result is deployed to the [example project app](mrm-solution-tree---ep/app).
 
@@ -654,11 +1750,17 @@ tree but just $$15$$ of those are full rendering.
 themselves**, so it's easy to spot that flaw (notice node $$(4, 1)$$ for
 instance):
 
-![Memoization Off](memoization-off.png)
+<figure>
+    <img src="memoization-off.png" alt="Memoization Off" />
+    <figcaption>Memoization Off</figcaption>
+</figure>
 
 The problem, if we use full memoization, is as said before, correctness:
 
-![Full Memoization](full-memoization.png)
+<figure>
+    <img src="full-memoization.png" alt="Full Memoization" />
+    <figcaption>Full Memoization</figcaption>
+</figure>
 
 The optimization can be addressed by computing a *more accurate model* and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
@@ -673,7 +1775,10 @@ follow the recursion process.
 Recall that, as said above, the last nodes from the bottom are *partially
 drawn* more times later.
 
-![Drawing Order](drawing-order.png)
+<figure>
+    <img src="drawing-order.png" alt="Drawing Order" />
+    <figcaption>Drawing Order</figcaption>
+</figure>
 
 ## More Recursion
 
@@ -687,7 +1792,10 @@ directed graph structure that looks similar to the tree that was developed.
 **Result Chains:** Replace the first year and then, two ways can be taken for
 the next year.
 
-![Result Chains](result-chains.png)
+<figure>
+    <img src="result-chains.png" alt="Result Chains" />
+    <figcaption>Result Chains</figcaption>
+</figure>
 
 Since the solution tree is the **set of all possible solutions** to the problem,
 and particularly, the **model solution belongs to the tree** which, with more
@@ -695,7 +1803,10 @@ clever work can be traced onto the same solution tree:
 
 **Traced Solution Tree:** The model solution can be drawn into the tree.
 
-![Traced Solution Tree](traced-solution-tree.png)
+<figure>
+    <img src="traced-solution-tree.png" alt="Traced Solution Tree" />
+    <figcaption>Traced Solution Tree</figcaption>
+</figure>
 
 Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
@@ -738,6 +1849,7 @@ Standard memoization with a `Set` helps to fix and optimize the recursive tree
 traversal rendering and detailed analysis on the recursion used as well as
 further insight on how this feature is evolving in the Repsymo Solver
 complements the understanding of this topic.
+
 
 
 

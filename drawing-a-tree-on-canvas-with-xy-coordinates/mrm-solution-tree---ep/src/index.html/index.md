@@ -77,7 +77,7 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src/
 
     <footer>
       <h2>
-        <a href="../">
+        <a href="../../">
           Drawing a Tree on Canvas with XY Coordinates
         </a>
       </h2>

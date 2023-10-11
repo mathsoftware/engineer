@@ -12,6 +12,7 @@ title: "drawing-a-tree-on-canvas-with-xy-coordinates/mrm-solution-tree---ep/src/
 body {
   padding: 3% 5%;
   font-family: 'Poppins', sans-serif;
+  background: #fafafa;
 }
 
 h1 {
