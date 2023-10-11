@@ -36,7 +36,7 @@ textbook references. It's also advisable to review the
     [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
     to explain the MRM to eventually end up building the 2DP Repsymo Solver
 
-![Solution Tree with HTML and CSS \| EP: MRM](solution-tree-with-html-and-css---ep-mrm.png)
+![](solution-tree-with-html-and-css---ep-mrm.png)
 
 Chances are obviously limited and the connecting lines from a node to
 its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
@@ -125,7 +125,7 @@ Create the module `mrm-canvas` that is going to be developed. It's going to
 contain the following specification that is going to be detailed along with this
 article:
 
-![Module MRM Canvas \| UML Class Diagram](module-mrm-canvas---uml-class-diagram.svg)
+![](module-mrm-canvas---uml-class-diagram.svg)
 
 This function is going to help with some calculations:
 
@@ -348,7 +348,7 @@ axesCanvas.init(canvasEl);
 axesCanvas.render();
 ```
 
-![Axes Canvas](axes-canvas.png)
+![](axes-canvas.png)
 
 ### Drawing the Tree
 
@@ -509,7 +509,7 @@ canvas.init(canvasEl);
 canvas.render();
 ```
 
-![Drawing Node Circle and Content](drawing-node-circle-and-content.png)
+![](drawing-node-circle-and-content.png)
 
 #### Line with Labels from Node-to-Node
 
@@ -548,7 +548,7 @@ useful for **computing the directions for the outgoing lines from the current
 node to the next one**. We simply use **similar triangles** to obtain the
 requesting points.
 
-![Triangle for Tangent Point at Node-to-Node Line](triangle-for-tangent-point-at-node--to--node-line.svg)
+![](triangle-for-tangent-point-at-node--to--node-line.svg)
 
 `Triangle Defined by Two Nodes
 | met drawNodeLines | class SolutionTreeCanvas | mrm-canvas.ts`
@@ -668,7 +668,7 @@ canvas.render();
 
 By running now, we get the desired result:
 
-![Solution Tree Canvas](solution-tree-canvas.png)
+![](solution-tree-canvas.png)
 
 The result is deployed to the [example project app](mrm-solution-tree---ep/app).
 
@@ -700,11 +700,11 @@ tree but just $$15$$ of those are full rendering.
 themselves**, so it's easy to spot that flaw (notice node $$(4, 1)$$ for
 instance):
 
-![Memoization Off](memoization-off.png)
+![](memoization-off.png)
 
 The problem, if we use full memoization, is as said before, correctness:
 
-![Full Memoization](full-memoization.png)
+![](full-memoization.png)
 
 The optimization can be addressed by computing a *more accurate model* and just
 drawing the exact required line tangent to the nodes, so they don't overlap with
@@ -719,7 +719,7 @@ follow the recursion process.
 Recall that, as said above, the last nodes from the bottom are *partially
 drawn* more times later.
 
-![Drawing Order](drawing-order.png)
+![](drawing-order.png)
 
 ## More Recursion
 
@@ -733,7 +733,7 @@ directed graph structure that looks similar to the tree that was developed.
 **Result Chains:** Replace the first year and then, two ways can be taken for
 the next year.
 
-![Result Chains](result-chains.png)
+![](result-chains.png)
 
 Since the solution tree is the **set of all possible solutions** to the problem,
 and particularly, the **model solution belongs to the tree** which, with more
@@ -741,7 +741,7 @@ clever work can be traced onto the same solution tree:
 
 **Traced Solution Tree:** The model solution can be drawn into the tree.
 
-![Traced Solution Tree](traced-solution-tree.png)
+![](traced-solution-tree.png)
 
 Check out
 [Pull Request: Implement solution tracing on mrm solutions-tree](https://github.com/repsymo/2dp-repsymo-solver/pull/24)
