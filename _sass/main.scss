@@ -63,8 +63,8 @@ blockquote p:not(:last-child) {
   color: var(--third-text-color);
 }
 
-p img,
-video {
+figure img,
+figure video {
   display: block;
   max-width: 100%;
   margin: auto;
@@ -76,12 +76,11 @@ video {
   min-width: 60%;
 }
 
-figcaption strong {
-  color: var(--title-text-color);
-}
-
-strong {
-  color: var(--content-text-color);
+img ~ figcaption,
+video ~ figcaption {
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .show {
