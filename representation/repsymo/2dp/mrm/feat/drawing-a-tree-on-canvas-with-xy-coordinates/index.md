@@ -14,49 +14,77 @@ The result is a
 
 ## Original MRM Problem
 
-The **Machine Replacement Model (MRM)** is a deterministic dynamic programming
-model from operations research. It states that we have a machine with an
-initial age. We have a number of decision years to know what to do with that
-machine. Then, for each decision year, there are two options: **keep** the
-machine and pay maintenance (**K**), or **replace** the machine with a new one
-(**R**). All the possible outcomes starting from the first decision year can be
-visually represented as a tree that grows on the horizontal axis or the same,
-the independent variable (decision year).
+The **Machine Replacement Model (MRM)** is an operations research deterministic
+dynamic programming model.
 
-The first solution tree version depicted below was made with HTML, CSS, and
-the DOM API (`div` elements). That version can be found at
-[EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep)[^1].
-It's recommended to check it out to understand the problem better and get
-textbook references. It's also advisable to review the
+It states that we have a machine with an initial age, and we need to know what
+to do with it during the following decision years. Then, for each decision year,
+there are two options:
+
+- **Keep (K)** the machine and pay maintenance.
+- **Replace (R)** the machine with a new one.
+
+All the possible outcomes starting from the first decision year can be visually
+represented as a tree that grows on the horizontal axis, or the same, the
+independent variable, or decision year. That is **the solution tree**.
+
+The first solution tree version was made with JavaScript, HTML, and CSS. It's
+published at
+[EP: MRM](https://github.com/tobiasbriones/machine-replacement-model---ep)
+[^1] documenting the origin[^2] of the initial problem's engineering, and it's
+recommended to review it to understand the problem better and get references.
+
+[^1]: **Example Project: Machine Replacement Model** was the first and
+    leading operations research project devised and developed by
+    [Tobias Briones](https://github.com/tobiasbriones) to solve and explain
+    the model, then led to the building of the 2DP Repsymo Solver
+
+[^2]: The project eventually activated the idea of mathematical
+    software engineering, leading to the MathSwe undertaking, so it can be said
+    to be one of the origins
+
+It's also advantageous to further review the
 [Repsymo Solver](https://repsymo.com) for a complete insight into this model
 (and more).
 
-[^1]: **Example Project: Machine Replacement Model** was the first and
-    main OR project devised and developed by
-    [Tobias Briones](https://github.com/tobiasbriones) to solve and be able
-    to explain the MRM to eventually end up building the 2DP Repsymo Solver
+The initial solution tree was written in the DOM API with plain `div` elements
+with no `canvas` or more complex technologies or models.
 
 ![](solution-tree-with-html-and-css---ep-mrm.png)
 
-Chances are obviously limited and the connecting lines from a node to
-its next nodes are missing (hence the pairs $$(K, R)$$ as labels). The other
-problem is that the data structure was a **two-dimensional array** but the
-underlying model corresponds to a **tree**. This solution was a very good fit
-back in the day for moving forward faster with the development.
+The design is obviously limited with such constraints as a grid of `div`
+elements and CSS.
+
+The connecting lines from a node to its next nodes are missing. Hence, the
+pairs $$(K, R)$$ act as labels below each node trying to represent the lines.
+
+The concerning problem is that **its data structure is
+a *two-dimensional array*, but the underlying model corresponds to a *tree***.
+
+This solution with a default array model was a great fit back in the day for
+moving forward faster with the development, even though the model and app design
+required **many *simplifications*[^3] to get from array to tree**.
+
+[^3]: Simplification is one of the most essential keys to math software
+    engineering, and we get the very example from how it's used to do math
+    itself
+
+The challenge of wanting to use plain HTML and JS made the simplification much
+harder, too.
 
 The problem consists of **populating the binary tree data structure onto a
 canvas and also the XY-axes** to establish each node's position.
 
-A browser canvas[^2] (or canvas in general) is not the best performant
-solution[^3] but is a great step for this problem in terms of rendering and
+A browser canvas[^4] (or canvas in general) is not the best performant
+solution[^5] but is a great step for this problem in terms of rendering and
 correctness.
 
-[^2]: A Canvas is a popular, more flexible, and performant tool for specific
+[^4]: A Canvas is a popular, more flexible, and performant tool for specific
     graphics than a user GUI library like for example the HTML DOM API or
     Android Views, but it's a lower-level API, so it requires more work and
     design which is probably what we're looking for
 
-[^3]: A Canvas is a lower-level tool than a GUI toolkit, but it's far from
+[^5]: A Canvas is a lower-level tool than a GUI toolkit, but it's far from
     the advanced top-performant techniques
 
 ### Other Kinds of Trees
@@ -84,9 +112,9 @@ convoluted, and prone to errors.
 
 Applying the right data structure to a model has more engineering efforts,
 but it homogenizes the problem down to a simple model that is elegant and
-correct, in other words, the model **matches**[^4] the representation.
+correct, in other words, the model **matches**[^6] the representation.
 
-[^4]: Notice FP pattern matching
+[^6]: Notice FP pattern matching
 
 ## EP: MRM Solution Tree
 
